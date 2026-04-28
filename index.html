@@ -1,47 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>The Vault Antiques & Decor</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
-<header>
-  <h1>The Vault Antiques & Decor</h1>
-</header>
+  <!-- =====================================================
+       HEADER / TOP NAVIGATION
+  ====================================================== -->
+  <header class="site-header">
+    <nav class="navbar">
 
-<section class="hero">
-  <h2>Discover Unique Finds</h2>
-  <p>Antiques • Vintage • One-of-a-kind pieces</p>
-  <button>Shop Latest Finds</button>
+      <a href="index.html" class="brand">
+        <img src="images/vault-logo.png" alt="The Vault logo" class="brand-logo" />
+        <div class="brand-text">
+          <span>The Vault</span>
+          <small>Antiques & Decor</small>
+        </div>
+      </a>
+
+<ul class="nav-links">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="products.html">Products</a></li>
+  <li><a href="about.html">About Us</a></li>
+  <li><a href="events.html">Events</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+
+    </nav>
+  </header>
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO / FRONT BANNER
+         Background image should be saved as:
+         images/hero-antique.jpg
+    ====================================================== -->
+    <section class="hero">
+      <div class="hero-content">
+
+        <p class="eyebrow">Antiques • Decor • Curated Finds</p>
+
+        <!-- Kept to exactly two lines -->
+      <h1 class="hero-title">
+  <span class="line1">The Vault</span>
+  <span class="line2">Antiques&nbsp;&amp;&nbsp;Decor</span>
+</h1>
+<div class="lux-divider">
+  <span></span>
+</div>
+
+        <div class="gold-divider">
+          <span></span>
+          <div class="diamond">◇</div>
+          <span></span>
+        </div>
+
+        <div class="hero-location">
+          <span class="location-icon">📍</span>
+          <div>
+            <strong>Downtown Lemont, IL</strong>
+            <p>408 Main Str.</p>
+          </div>
+        </div>
+
+        <p class="hero-text">
+          A refined collection of antique pieces, timeless decor, and one-of-a-kind finds selected with character and style.
+        </p>
+
+        <a href="#new-this-week" class="primary-btn">Explore New Arrivals</a>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         CATEGORY PREVIEW STRIP
+    ====================================================== -->
+   <section class="category-strip">
+  <article class="category-tile">
+    <span>Art Nouveau</span>
+  </article>
+
+  <article class="category-tile">
+    <span>Mid-Century Modern</span>
+  </article>
+
+  <article class="category-tile">
+    <span>Folk Art</span>
+  </article>
+
+  <article class="category-tile">
+    <span>Pop Culture</span>
+  </article>
 </section>
 
-<section class="weekly">
-  <h2>New This Week</h2>
-  <div id="items-container"></div>
-</section>
 
-<section class="events">
-  <h2>Upcoming Events</h2>
+    <!-- =====================================================
+         NEW THIS WEEK / HORIZONTAL CAROUSEL
+         Later this can connect to The Vault inventory system.
+    ====================================================== -->
+    <section id="new-this-week" class="carousel-section">
+
+      <div class="section-heading">
+        <div class="mini-divider">
+          <span></span>
+          <p>New This Week</p>
+          <span></span>
+        </div>
+
+        <h2>Fresh Finds From The Vault</h2>
+
+        <p>
+          A rotating preview of newly added inventory. Later, this section can connect directly to your Vault inventory system.
+        </p>
+      </div>
+
+      <div class="carousel-shell">
+
+        <button class="carousel-arrow" id="prevItem" aria-label="Previous items">
+          &#10094;
+        </button>
+
+        <div class="carousel-window">
+          <div class="carousel-track" id="carouselTrack">
+            <!-- Product cards are loaded from script.js -->
+          </div>
+        </div>
+
+        <button class="carousel-arrow" id="nextItem" aria-label="Next items">
+          &#10095;
+        </button>
+
+      </div>
+
+      <div class="carousel-dots" id="carouselDots" aria-label="Carousel navigation"></div>
+
+    </section>
+
+<!-- =====================================================
+     EVENTS SECTION
+===================================================== -->
+<section id="events" class="events-section">
   <div class="event-card">
-    <h3>Grand Opening</h3>
-    <p>Join us for our grand opening event!</p>
-    <p><strong>Date:</strong> Coming Soon</p>
+    <p class="eyebrow">Upcoming Event</p>
+
+    <!-- ✅ FIXED TITLE -->
+    <h2>Grand Opening Coming Soon</h2>
+
+    <p>
+      Join us for our first official event at The Vault Antiques & Decor. More details will be announced soon.
+    </p>
+
+    <a href="events.html" class="secondary-btn">View Event Details</a>
   </div>
 </section>
 
-<section class="email">
-  <h2>Stay Connected</h2>
-  <p>Be the first to see new inventory and events</p>
-  <input type="email" placeholder="Enter your email">
-  <button>Subscribe</button>
+
+<!-- =====================================================
+     SUBSCRIBE SECTION
+===================================================== -->
+<section id="subscribe" class="subscribe-section">
+  <div class="subscribe-box">
+
+    <p class="eyebrow">Stay Updated</p>
+
+    <h2>Get New Finds & Event Updates</h2>
+
+    <p>
+      Sign up to receive updates when new inventory, events, and special announcements go live.
+    </p>
+
+    <form class="signup-form">
+      <input type="email" placeholder="Enter your email" aria-label="Email address" />
+      <button type="submit">Subscribe</button>
+    </form>
+
+    <!-- SOCIAL SECTION -->
+   <div class="social-follow">
+  <p class="social-label">Follow Us</p>
+
+  <div class="social-links">
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  </div>
+</div>
+
+  </div>
 </section>
 
-<footer>
-  <p>© 2026 The Vault Antiques & Decor</p>
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+<footer class="site-footer">
+  <p>&copy; 2026 The Vault Antiques & Decor. All rights reserved.</p>
 </footer>
 
-<script src="script.js"></script>
+
+  <!-- Main carousel script -->
+  <script src="script.js"></script>
+
 </body>
 </html>
