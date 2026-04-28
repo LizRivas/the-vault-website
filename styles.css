@@ -303,7 +303,45 @@ img {
   font-size: 1.1rem;
   text-shadow: 0 4px 18px rgba(0, 0, 0, 0.72);
 }
+/* =========================================================
+   HERO LOCATION (CLICKABLE)
+========================================================= */
 
+.hero-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 18px;
+  text-decoration: none;
+}
+
+.hero-location .pin {
+  font-size: 1.6rem;
+  transition: transform 0.25s ease;
+}
+
+.location-top {
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.location-bottom {
+  font-size: 1rem;
+  letter-spacing: 3px;
+  color: var(--gold);
+}
+
+/* subtle premium hover */
+.hero-location:hover .pin {
+  transform: scale(1.15);
+}
+
+.hero-location:hover .location-bottom {
+  color: #fff;
+}
 /* =========================================================
    5. HOMEPAGE CATEGORY STRIP
 ========================================================= */
@@ -1164,4 +1202,58 @@ img {
 .filter-group label:has(input:checked) {
   color: var(--gold);
   font-weight: 700;
+}
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-info h2,
+.contact-form h2 {
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border: 1px solid var(--border);
+  font-family: inherit;
+}
+
+.contact-form button {
+  padding: 14px;
+  border: none;
+  background: var(--brown);
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-form button:hover {
+  background: #000;
+}
+
+@media (max-width: 800px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }
