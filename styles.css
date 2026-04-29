@@ -1648,11 +1648,36 @@ img {
    EVENTS PAGE FINAL LUXURY UPGRADES
 ========================================================= */
 
-/* Subtle floating balloon movement */
+/* Stronger balloon movement */
 .events-page-hero::before {
-  animation: subtleBalloonFloat 10s ease-in-out infinite alternate;
+  animation: subtleBalloonFloat 6s ease-in-out infinite alternate;
+}
+.events-page-hero::before {
+  filter: blur(2px);
+}
+.events-hero-content {
+  animation: fadeUp 0.9s ease both;
+}
+@keyframes subtleBalloonFloat {
+  from {
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    transform: translateY(-24px) scale(1.04);
+  }
+}
+.events-page-hero::before {
+  z-index: 1;
 }
 
+.events-page-hero::after {
+  z-index: 0;
+}
+
+.events-hero-content {
+  z-index: 2;
+}
 /* Thin luxury divider under Grand Opening */
 .events-hero-content h1::after {
   content: "";
@@ -1698,14 +1723,10 @@ img {
 .events-cta-box .secondary-btn {
   margin-top: 10px;
 }
+.event-preview-card {
+  cursor: default;
+}
 
-/* Balloon floating animation */
-@keyframes subtleBalloonFloat {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(-14px);
-  }
+.event-preview-card:hover h3 {
+  color: var(--gold);
 }
