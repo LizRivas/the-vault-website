@@ -1,0 +1,352 @@
+[
+  {
+    "sku": "M-1044",
+    "name": "Betty Boop 3",
+    "category": "Clothing",
+    "price": 37,
+    "condition": "Like New",
+    "image": "images/products/M-1044.jpg",
+    "status": "Available",
+    "quantity_available": 2
+  },
+  {
+    "sku": "M-1043",
+    "name": "name",
+    "category": "Furniture",
+    "price": 14,
+    "condition": "Good",
+    "image": "",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1042",
+    "name": "name",
+    "category": "Furniture",
+    "price": 20,
+    "condition": "Good",
+    "image": "",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1041",
+    "name": "Test Save",
+    "category": "Furniture",
+    "price": 0,
+    "condition": "",
+    "image": "",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1040",
+    "name": "test validation",
+    "category": "Seasonal-Spring",
+    "price": 14.99,
+    "condition": "Fair",
+    "image": "",
+    "status": "Available (Partial)",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1039",
+    "name": "test add new item",
+    "category": "Holiday-Christmas",
+    "price": 100,
+    "condition": "Like New",
+    "image": "images/products/M-1039.jpg",
+    "status": "Available (Partial)",
+    "quantity_available": 2
+  },
+  {
+    "sku": "M-1038",
+    "name": "New product List",
+    "category": "Sports Memorabilia",
+    "price": 24,
+    "condition": "Fair",
+    "image": "",
+    "status": "Available (Partial)",
+    "quantity_available": 2
+  },
+  {
+    "sku": "M-1037",
+    "name": "test transaction table",
+    "category": "Holiday-4th of July",
+    "price": 10,
+    "condition": "Good",
+    "image": "",
+    "status": "Available (Partial)",
+    "quantity_available": 6
+  },
+  {
+    "sku": "M-1036",
+    "name": "test freeze on page",
+    "category": "Furniture",
+    "price": 60,
+    "condition": "Good",
+    "image": "",
+    "status": "Available (Partial)",
+    "quantity_available": 2
+  },
+  {
+    "sku": "M-1035",
+    "name": "Test Quantity V7",
+    "category": "Holiday-Halloween",
+    "price": 15,
+    "condition": "Good",
+    "image": "",
+    "status": "Available (Partial)",
+    "quantity_available": 5
+  },
+  {
+    "sku": "M-1034",
+    "name": "Test Quantity V6",
+    "category": "Holiday-Christmas",
+    "price": 10,
+    "condition": "Good",
+    "image": "",
+    "status": "Available (Partial)",
+    "quantity_available": 6
+  },
+  {
+    "sku": "M-1033",
+    "name": "test quantity sold - V5",
+    "category": "Books",
+    "price": 14,
+    "condition": "Like New",
+    "image": "",
+    "status": "Available (Partial)",
+    "quantity_available": 7
+  },
+  {
+    "sku": "M-1032",
+    "name": "test quantity 10",
+    "category": "Comics",
+    "price": 5,
+    "condition": "Like New",
+    "image": "",
+    "status": "Available (Partial)",
+    "quantity_available": 6
+  },
+  {
+    "sku": "M-1031",
+    "name": "test sell more quanity",
+    "category": "Comics",
+    "price": 8,
+    "condition": "Like New",
+    "image": "",
+    "status": "Available",
+    "quantity_available": 10
+  },
+  {
+    "sku": "M-1030",
+    "name": "test quantity sold 3",
+    "category": "Jewlery",
+    "price": 15,
+    "condition": "Like New",
+    "image": "",
+    "status": "Available (Partial)",
+    "quantity_available": 9
+  },
+  {
+    "sku": "M-1029",
+    "name": "One Quantity Check",
+    "category": "Seasonal-Spring",
+    "price": 10,
+    "condition": "Poor",
+    "image": "",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1028",
+    "name": "Chicago Cubs Purse",
+    "category": "Handbags",
+    "price": 45,
+    "condition": "New",
+    "image": "images/products/M-1028.jpg",
+    "status": "Available (Partial)",
+    "quantity_available": 4
+  },
+  {
+    "sku": "M-1026",
+    "name": "Test Quantity Sold",
+    "category": "Home Decor",
+    "price": 85,
+    "condition": "New",
+    "image": "images/products/M-1026.jpg",
+    "status": "Available (Partial)",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1025",
+    "name": "The Bug - Car Model",
+    "category": "Toys",
+    "price": 25,
+    "condition": "Very Good",
+    "image": "images/products/M-1025.jpg",
+    "status": "Available (Partial)",
+    "quantity_available": 3
+  },
+  {
+    "sku": "M-1022",
+    "name": "Test Photo",
+    "category": "Outdoor",
+    "price": 800,
+    "condition": "Very Good",
+    "image": "images/products/M-1022.jpg",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1021",
+    "name": "Bull Smoker 2",
+    "category": "Outdoor",
+    "price": 3000,
+    "condition": "Very Good",
+    "image": "images/products/M-1021.jpg",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1020",
+    "name": "Test New Layout",
+    "category": "Toys",
+    "price": 16.2,
+    "condition": "New",
+    "image": "",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1018",
+    "name": "The Bull Smoker",
+    "category": "Other",
+    "price": 1350,
+    "condition": "Good",
+    "image": "images/products/M-1018.jpg",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1017",
+    "name": "New Item test",
+    "category": "Handbags",
+    "price": 15,
+    "condition": "New",
+    "image": "",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1016",
+    "name": "Betty Boop",
+    "category": "Other",
+    "price": 1200,
+    "condition": "Good",
+    "image": "images/products/M-1016.jpg",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1015",
+    "name": "save Item2",
+    "category": "Furniture",
+    "price": 90,
+    "condition": "Fair",
+    "image": "images/products/M-1015.jpg",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1013",
+    "name": "Test Reprice and Save Item",
+    "category": "Books",
+    "price": 35,
+    "condition": "Good",
+    "image": "",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1012",
+    "name": "test reprice",
+    "category": "Handbags",
+    "price": 22.5,
+    "condition": "",
+    "image": "",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1011",
+    "name": "test repricing 1",
+    "category": "Clothing",
+    "price": 75,
+    "condition": "Fair",
+    "image": "",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1010",
+    "name": "Funko Pop - Wolverine",
+    "category": "Toys",
+    "price": 25,
+    "condition": "New",
+    "image": "images/products/M-1010.jpg",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1007",
+    "name": "Ford Mustang Hot Wheels",
+    "category": "Toys",
+    "price": 15,
+    "condition": "New",
+    "image": "images/products/M-1007.jpg",
+    "status": "Available",
+    "quantity_available": 5
+  },
+  {
+    "sku": "M-1006",
+    "name": "Pearl Ring",
+    "category": "Jewlery",
+    "price": 19.99,
+    "condition": "Good",
+    "image": "",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1005",
+    "name": "Spider Man 1954 Comic",
+    "category": "Comics",
+    "price": 10,
+    "condition": "Good",
+    "image": "images/products/M-1005.jpg",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1004",
+    "name": "Horn",
+    "category": "Home Decor",
+    "price": 0,
+    "condition": "Good",
+    "image": "images/products/M-1004.jpg",
+    "status": "Available",
+    "quantity_available": 3
+  },
+  {
+    "sku": "M-1002",
+    "name": "Tiffany Style Lamp",
+    "category": "Other",
+    "price": 20,
+    "condition": "New",
+    "image": "images/products/M-1002.jpg",
+    "status": "Available",
+    "quantity_available": 1
+  }
+]

@@ -1,61 +1,118 @@
 /* =========================================================
-   PRODUCTS PAGE FILTER LOGIC
-   Future-ready for The Vault inventory system
+   PRODUCTS PAGE - JSON RENDER + FILTER LOGIC
 ========================================================= */
 
+let allProducts = [];
+
+const defaultImage = "images/products/placeholder.jpg";
+
 const defaultCategories = [
-  [1, "Furniture"],
-  [2, "Home Decor"],
-  [3, "Lighting"],
-  [4, "Wall Art"],
-  [5, "Records"],
-  [6, "Comics"],
-  [7, "Toys"],
-  [8, "Sports Memorabilia"],
-  [9, "Books"],
-  [10, "Jewelry"],
-  [11, "Clothing"],
-  [12, "Handbags"],
-  [13, "Accessories"],
-  [14, "Holiday-Christmas"],
-  [15, "Holiday-Halloween"],
-  [16, "Holiday-4th of July"],
-  [17, "Seasonal-Spring"],
-  [18, "Seasonal-Fall"],
-  [19, "Other"]
+  "Furniture",
+  "Home Decor",
+  "Lighting",
+  "Wall Art",
+  "Records",
+  "Comics",
+  "Toys",
+  "Sports Memorabilia",
+  "Books",
+  "Jewelry",
+  "Jewlery",
+  "Clothing",
+  "Handbags",
+  "Accessories",
+  "Holiday-Christmas",
+  "Holiday-Halloween",
+  "Holiday-4th of July",
+  "Seasonal-Spring",
+  "Seasonal-Fall",
+  "Other",
+  "Outdoor"
 ];
 
-async function getCategories() {
-  return defaultCategories.map(([id, name]) => ({ id, name }));
+function money(value) {
+  return `$${Number(value || 0).toFixed(2)}`;
 }
 
-async function loadCategoryCheckboxes() {
+function slugify(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replaceAll(" ", "-")
+    .replaceAll("/", "")
+    .trim();
+}
+
+async function loadProductsFromJSON() {
+  const response = await fetch("data/inventory.json");
+
+  if (!response.ok) {
+    throw new Error("Could not load data/inventory.json");
+  }
+
+  allProducts = await response.json();
+}
+
+function loadCategoryCheckboxes() {
   const categoryContainer = document.getElementById("categoryCheckboxes");
   if (!categoryContainer) return;
 
-  const categories = await getCategories();
+  const categoriesFromProducts = [...new Set(
+    allProducts.map(p => p.category).filter(Boolean)
+  )];
+
+  const categories = [...new Set([...defaultCategories, ...categoriesFromProducts])];
+
   categoryContainer.innerHTML = "";
 
-  categories.forEach((category) => {
+  categories.forEach(category => {
     const label = document.createElement("label");
-
     label.innerHTML = `
-      <input type="checkbox" name="category" value="${category.name}">
-      ${category.name}
+      <input type="checkbox" name="category" value="${category}">
+      ${category}
     `;
-
     categoryContainer.appendChild(label);
   });
 }
 
-/* =========================================================
-   PRICE RANGE LOGIC
-========================================================= */
+function renderProducts(products) {
+  const grid = document.querySelector(".products-grid");
+  if (!grid) return;
+
+  if (products.length === 0) {
+    grid.innerHTML = `<p class="empty-products">No products match these filters.</p>`;
+    updateResultsCount(0, allProducts.length);
+    return;
+  }
+
+  grid.innerHTML = products.map(product => `
+    <div 
+      class="catalog-card"
+      data-category="${product.category || ""}"
+      data-price="${Number(product.price || 0)}"
+      data-condition="${product.condition || ""}"
+    >
+     <img 
+  src="${product.image || defaultImage}" 
+  alt="${product.name || "Vault item"}"
+  onerror="this.onerror=null; this.src='images/vault-logo.png';"
+/>
+
+      <div class="catalog-card-content">
+        <p class="catalog-category">${product.category || "Uncategorized"}</p>
+        <h3>${product.name || "Unnamed Item"}</h3>
+        <p class="catalog-condition">${product.condition || "Condition not listed"}</p>
+        <p class="catalog-price">${money(product.price)}</p>
+      </div>
+    </div>
+  `).join("");
+
+  updateResultsCount(products.length, allProducts.length);
+}
 
 function matchesPriceRange(price, selectedRanges) {
   if (selectedRanges.length === 0) return true;
 
-  return selectedRanges.some((range) => {
+  return selectedRanges.some(range => {
     if (range === "under-25") return price < 25;
     if (range === "25-75") return price >= 25 && price <= 75;
     if (range === "75-150") return price > 75 && price <= 150;
@@ -65,36 +122,23 @@ function matchesPriceRange(price, selectedRanges) {
   });
 }
 
-/* =========================================================
-   FILTER PRODUCTS
-========================================================= */
-
 function filterProducts() {
-  const cards = document.querySelectorAll(".catalog-card");
-
   const selectedCategories = Array.from(
     document.querySelectorAll('input[name="category"]:checked')
-  ).map((input) => input.value);
+  ).map(input => input.value);
 
   const selectedPrices = Array.from(
     document.querySelectorAll('input[name="price"]:checked')
-  ).map((input) => input.value);
+  ).map(input => input.value);
 
   const selectedConditions = Array.from(
     document.querySelectorAll('input[name="condition"]:checked')
-  ).map((input) => input.value);
+  ).map(input => input.value);
 
-  let visibleCount = 0;
-
-  cards.forEach((card) => {
-    const category = card.dataset.category;
-    const price = Number(card.dataset.price);
-    const condition = card.dataset.condition;
-
-    const conditionSlug = condition
-      .toLowerCase()
-      .replaceAll(" ", "-")
-      .replace("/", "");
+  const filtered = allProducts.filter(product => {
+    const category = product.category || "";
+    const price = Number(product.price || 0);
+    const conditionSlug = slugify(product.condition);
 
     const categoryMatch =
       selectedCategories.length === 0 || selectedCategories.includes(category);
@@ -104,20 +148,11 @@ function filterProducts() {
     const conditionMatch =
       selectedConditions.length === 0 || selectedConditions.includes(conditionSlug);
 
-    if (categoryMatch && priceMatch && conditionMatch) {
-      card.style.display = "block";
-      visibleCount++;
-    } else {
-      card.style.display = "none";
-    }
+    return categoryMatch && priceMatch && conditionMatch;
   });
 
-  updateResultsCount(visibleCount, cards.length);
+  renderProducts(filtered);
 }
-
-/* =========================================================
-   RESULTS COUNT
-========================================================= */
 
 function updateResultsCount(visibleCount, totalCount) {
   const resultsCount = document.getElementById("resultsCount");
@@ -126,22 +161,34 @@ function updateResultsCount(visibleCount, totalCount) {
   resultsCount.textContent = `Showing ${visibleCount} of ${totalCount} items`;
 }
 
-/* =========================================================
-   INIT
-========================================================= */
-
 async function initProductsPage() {
-  await loadCategoryCheckboxes();
+  try {
+    await loadProductsFromJSON();
+    loadCategoryCheckboxes();
+    renderProducts(allProducts);
 
-  const allCheckboxes = document.querySelectorAll(
-    '.products-sidebar input[type="checkbox"]'
-  );
+    const allCheckboxes = document.querySelectorAll(
+      '.products-sidebar input[type="checkbox"]'
+    );
 
-  allCheckboxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", filterProducts);
-  });
+    allCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener("change", filterProducts);
+    });
 
-  filterProducts();
+  } catch (error) {
+    console.error("Products page error:", error);
+
+    const grid = document.querySelector(".products-grid");
+    if (grid) {
+      grid.innerHTML = `
+        <p class="empty-products">
+          Products could not be loaded. Make sure data/inventory.json exists.
+        </p>
+      `;
+    }
+
+    updateResultsCount(0, 0);
+  }
 }
 
 initProductsPage();

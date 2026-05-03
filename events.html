@@ -53,82 +53,45 @@
 
 
     <!-- FEATURED EVENT -->
-    <section class="featured-event-section">
-      <div class="featured-event-card">
+<section class="featured-event-section">
+  <div class="featured-event-card">
 
-        <div>
-          <p class="eyebrow">Featured Event</p>
-          <h2>The Vault Grand Opening</h2>
-          <p>
-            Join us as we officially open The Vault Antiques & Decor in downtown Lemont.
-            Our grand opening will introduce the store, our curated collection, and the
-            shopping experience we are building for the community.
-          </p>
-        </div>
+    <div>
+      <p class="eyebrow" id="featuredEventLabel">Featured Event</p>
+      <h2 id="featuredEventTitle">The Vault Grand Opening</h2>
+      <p id="featuredEventDescription"></p>
+    </div>
 
-        <div class="event-details-box">
-          <p><strong>Date</strong><br>July / August 2026</p>
-          <p><strong>Location</strong><br>408 Main St<br>Lemont, IL 60439</p>
-          <p><strong>Status</strong><br>Final date coming soon</p>
-        </div>
+    <div class="event-details-box">
+      <p><strong>Date</strong><br><span id="featuredEventDate"></span></p>
+      <p><strong>Location</strong><br><span id="featuredEventLocation"></span></p>
+      <p><strong>Status</strong><br><span id="featuredEventStatus"></span></p>
+    </div>
 
-      </div>
-    </section>
+  </div>
+</section>
 
+<!-- =====================================================
+     UPCOMING EVENTS
+     Event cards load from events-data.js
+===================================================== -->
+<section class="upcoming-events-section">
 
-    <!-- UPCOMING EVENTS -->
-    <section class="upcoming-events-section">
+  <div class="section-heading">
+    <p class="eyebrow">What’s Ahead</p>
+    <h2>Upcoming Events</h2>
+    <p>
+      We plan to host and participate in special events throughout the year.
+      Check back often as dates and details are added.
+    </p>
+  </div>
 
-      <div class="section-heading">
-        <p class="eyebrow">What’s Ahead</p>
-        <h2>Upcoming Events</h2>
-        <p>
-          We plan to host and participate in special events throughout the year.
-          Check back often as dates and details are added.
-        </p>
-      </div>
+  <div class="events-grid" id="eventsGrid">
+    <!-- Events load here automatically from events-data.js -->
+  </div>
 
-      <div class="events-grid">
-
-        <div class="event-preview-card">
-          <p class="event-tag">Coming Soon</p>
-          <h3>Special Needs Shopping Event</h3>
-          <p>
-            A quieter, welcoming shopping experience designed with extra care, comfort,
-            and space for guests and families.
-          </p>
-        </div>
-
-        <div class="event-preview-card">
-          <p class="event-tag">Collector Event</p>
-          <h3>Signing Barbie Event</h3>
-          <p>
-            A fun collector-focused event featuring Barbie-themed pieces, photos,
-            and special finds.
-          </p>
-        </div>
-
-        <div class="event-preview-card">
-          <p class="event-tag">Holiday Event</p>
-          <h3>Pictures with Santa</h3>
-          <p>
-            A family-friendly holiday event with seasonal décor, Christmas finds,
-            and photo opportunities.
-          </p>
-        </div>
-
-        <div class="event-preview-card">
-          <p class="event-tag">Local Events</p>
-          <h3>Downtown Lemont Events</h3>
-          <p>
-            The Vault plans to participate in local markets, celebrations, and community
-            events throughout downtown Lemont.
-          </p>
-        </div>
-
-      </div>
-
-    </section>
+</section>
+   
 
 
     <!-- EVENT CTA -->
@@ -151,7 +114,8 @@
   <footer class="site-footer">
     <p>&copy; 2026 The Vault Antiques & Decor</p>
   </footer>
-
+<script src="events-data.js"></script>
+<script src="events.js"></script>
 </body>
 
 </html>

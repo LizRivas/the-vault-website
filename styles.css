@@ -898,9 +898,10 @@ img {
 
 .catalog-card img {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  height: auto;
-  object-fit: cover;
+  height: 260px;
+  object-fit: contain;
+  object-position: center;
+  background: #fffaf2;
 }
 
 .catalog-card-content {
@@ -933,7 +934,26 @@ img {
   font-size: 1rem;
   font-weight: 700;
 }
+.catalog-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
+.catalog-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  object-position: center;
+  background: #fffaf2;
+  padding: 10px;
+}
+
+.catalog-card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 /* =========================================================
    16. PRODUCTS PAGE - PAGINATION
 ========================================================= */
@@ -1729,4 +1749,23 @@ img {
 
 .event-preview-card:hover h3 {
   color: var(--gold);
+}
+/* =========================================================
+   EVENTS PAGE DATE STYLE
+========================================================= */
+
+.event-date {
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+.event-tag {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
 }

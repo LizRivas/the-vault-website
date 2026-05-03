@@ -7,15 +7,11 @@
 
   <title>Products | The Vault</title>
 
-  <!-- MAIN STYLES -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-  <!-- =====================================================
-       HEADER / NAVIGATION
-  ====================================================== -->
   <header class="site-header">
     <nav class="navbar">
 
@@ -39,46 +35,26 @@
     </nav>
   </header>
 
-
   <main>
 
-    <!-- =====================================================
-         PRODUCTS HERO / PAGE INTRO
-    ====================================================== -->
     <section class="products-hero">
       <h1>Our Collection</h1>
-
-      <p>
-        Browse our latest antiques, decor, and curated finds available in-store.
-      </p>
+      <p>Browse our latest antiques, decor, and curated finds available in-store.</p>
     </section>
 
-
-    <!-- =====================================================
-         PRODUCTS SHOP LAYOUT
-         Sidebar filters on the left, product grid on the right
-    ====================================================== -->
     <section class="products-shop-layout">
 
-      <!-- LEFT FILTER SIDEBAR -->
       <aside class="products-sidebar">
-
         <div class="filter-panel">
           <h2>Filter Collection</h2>
 
-          <!-- CATEGORY FILTERS -->
           <div class="filter-group">
             <h3>Product Categories</h3>
-
-            <div id="categoryCheckboxes" class="checkbox-list">
-              <!-- Categories load from products.js -->
-            </div>
+            <div id="categoryCheckboxes" class="checkbox-list"></div>
           </div>
 
-          <!-- PRICE FILTERS -->
           <div class="filter-group">
             <h3>Price</h3>
-
             <label><input type="checkbox" name="price" value="under-25"> Under $25</label>
             <label><input type="checkbox" name="price" value="25-75"> $25–$75</label>
             <label><input type="checkbox" name="price" value="75-150"> $75–$150</label>
@@ -86,10 +62,8 @@
             <label><input type="checkbox" name="price" value="over-300"> Over $300</label>
           </div>
 
-          <!-- CONDITION FILTERS -->
           <div class="filter-group">
             <h3>Condition</h3>
-
             <label><input type="checkbox" name="condition" value="new"> New</label>
             <label><input type="checkbox" name="condition" value="like-new"> Like New</label>
             <label><input type="checkbox" name="condition" value="very-good"> Very Good</label>
@@ -100,107 +74,30 @@
           </div>
 
         </div>
-
       </aside>
 
-
-      <!-- RIGHT PRODUCT RESULTS -->
       <section class="products-results">
 
         <div class="products-results-header">
           <p class="eyebrow">Available In Store</p>
-
           <h2>Browse Current Finds</h2>
-
-          <p class="results-count" id="resultsCount">
-            Showing 1–12 of 248 items
-          </p>
+          <p class="results-count" id="resultsCount">Loading items...</p>
         </div>
 
-<!-- PRODUCTS GRID -->
-<div class="products-grid">
-
-  <!-- PRODUCT CARD 1 -->
-  <div class="catalog-card" data-category="Lighting" data-price="145" data-condition="Very Good">
-    <img src="https://picsum.photos/400/300?1" alt="Vintage Brass Lamp" />
-
-    <div class="catalog-card-content">
-      <p class="catalog-category">Lighting</p>
-      <h3>Vintage Brass Lamp</h3>
-      <p class="catalog-condition">Very Good</p>
-      <p class="catalog-price">$145</p>
-    </div>
-  </div>
-
-  <!-- PRODUCT CARD 2 -->
-  <div class="catalog-card" data-category="Furniture" data-price="225" data-condition="Good">
-    <img src="https://picsum.photos/400/300?2" alt="Mid-Century Chair" />
-
-    <div class="catalog-card-content">
-      <p class="catalog-category">Furniture</p>
-      <h3>Mid-Century Chair</h3>
-      <p class="catalog-condition">Good</p>
-      <p class="catalog-price">$225</p>
-    </div>
-  </div>
-
-  <!-- PRODUCT CARD 3 -->
-  <div class="catalog-card" data-category="Home Decor" data-price="68" data-condition="Like New">
-    <img src="https://picsum.photos/400/300?3" alt="Ceramic Vase" />
-
-    <div class="catalog-card-content">
-      <p class="catalog-category">Home Decor</p>
-      <h3>Ceramic Vase</h3>
-      <p class="catalog-condition">Like New</p>
-      <p class="catalog-price">$68</p>
-    </div>
-  </div>
-
-  <!-- PRODUCT CARD 4 -->
-  <div class="catalog-card" data-category="Wall Art" data-price="185" data-condition="Fair">
-    <img src="https://picsum.photos/400/300?4" alt="Vintage Mirror" />
-
-    <div class="catalog-card-content">
-      <p class="catalog-category">Wall Art</p>
-      <h3>Vintage Mirror</h3>
-      <p class="catalog-condition">Fair</p>
-      <p class="catalog-price">$185</p>
-    </div>
-  </div>
-
-</div>
+        <div class="products-grid">
+          <!-- Products load from products.js -->
+        </div>
 
       </section>
 
     </section>
 
-
-    <!-- =====================================================
-         PRODUCT PAGINATION
-         Later this will connect to real inventory page counts
-    ====================================================== -->
-    <div class="product-pagination">
-      <button class="pagination-btn">‹ Previous</button>
-      <button class="pagination-number active">1</button>
-      <button class="pagination-number">2</button>
-      <button class="pagination-number">3</button>
-      <button class="pagination-number">4</button>
-      <button class="pagination-number">5</button>
-      <button class="pagination-btn">Next ›</button>
-    </div>
-
   </main>
 
-
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
   <footer class="site-footer">
     <p>&copy; 2026 The Vault Antiques & Decor</p>
   </footer>
 
-
-  <!-- PRODUCTS PAGE SCRIPT -->
   <script src="products.js"></script>
 
 </body>
