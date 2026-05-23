@@ -1,108 +1,43 @@
 /* =========================================================
    THE VAULT WEBSITE
-   HORIZONTAL NEW THIS WEEK CAROUSEL
-
-   Future inventory fields:
-   - image
-   - name
-   - category
-   - price
-   - dateAdded
-   - status
+   HOMEPAGE "NEW THIS WEEK" CAROUSEL
 ========================================================= */
 
+const INVENTORY_URL = "data/inventory.json";
+const FALLBACK_IMAGE = "images/vault-logo.png";
+const MAX_NEW_THIS_WEEK_ITEMS = 8;
 
-/* =========================================================
-   1. MOCK INVENTORY DATA
-
-   Later this array can be replaced with real data from
-   The Vault inventory system.
-========================================================= */
-
-const inventoryItems = [
-  {
-    image: "https://picsum.photos/900/650?random=11",
-    name: "Vintage Brass Lamp",
-    category: "Lighting",
-    price: 145.00,
-    dateAdded: "2026-04-26",
-    status: "active"
-  },
-  {
-    image: "https://picsum.photos/900/650?random=12",
-    name: "Antique Wooden Chair",
-    category: "Furniture",
-    price: 225.00,
-    dateAdded: "2026-04-25",
-    status: "active"
-  },
-  {
-    image: "https://picsum.photos/900/650?random=13",
-    name: "Decorative Ceramic Vase",
-    category: "Decor",
-    price: 68.00,
-    dateAdded: "2026-04-24",
-    status: "active"
-  },
-  {
-    image: "https://picsum.photos/900/650?random=14",
-    name: "Framed Vintage Mirror",
-    category: "Wall Decor",
-    price: 185.00,
-    dateAdded: "2026-04-22",
-    status: "sold"
-  },
-  {
-    image: "https://picsum.photos/900/650?random=15",
-    name: "Classic Typewriter",
-    category: "Collectibles",
-    price: 310.00,
-    dateAdded: "2026-04-21",
-    status: "active"
-  },
-  {
-    image: "https://picsum.photos/900/650?random=16",
-    name: "Mid-Century Side Table",
-    category: "Furniture",
-    price: 260.00,
-    dateAdded: "2026-04-20",
-    status: "active"
-  }
-];
-
-
-/* =========================================================
-   2. CAROUSEL STATE
-========================================================= */
-
+let inventoryItems = [];
 let currentSlide = 0;
 let itemsPerView = getItemsPerView();
 let autoRotateTimer;
-
-
-/* =========================================================
-   3. DOM ELEMENTS
-========================================================= */
 
 const carouselTrack = document.getElementById("carouselTrack");
 const dotsContainer = document.getElementById("carouselDots");
 const prevButton = document.getElementById("prevItem");
 const nextButton = document.getElementById("nextItem");
 
-
-/* =========================================================
-   4. FORMAT HELPERS
-========================================================= */
-
 function formatPrice(price) {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD"
-  }).format(price);
+  }).format(Number(price || 0));
+}
+
+function escapeHtml(value) {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
 }
 
 function formatDate(dateString) {
-  const date = new Date(dateString + "T00:00:00");
+  if (!dateString) return "";
+
+  const date = new Date(`${dateString}T00:00:00`);
+  if (Number.isNaN(date.getTime())) return "";
 
   return new Intl.DateTimeFormat("en-US", {
     month: "short",
@@ -111,42 +46,102 @@ function formatDate(dateString) {
   }).format(date);
 }
 
+function getSkuNumber(sku) {
+  const match = String(sku || "").match(/(\d+)$/);
+  return match ? Number(match[1]) : 0;
+}
+
+function getSortTime(item) {
+  const rawDate = item.list_date || item.dateAdded || item.date_added;
+  const time = rawDate ? new Date(`${rawDate}T00:00:00`).getTime() : 0;
+  return Number.isNaN(time) ? 0 : time;
+}
+
+function isAvailableForWebsite(item) {
+  const status = String(item.status || "").toLowerCase();
+  const quantityAvailable = Number(item.quantity_available ?? item.quantity ?? 0);
+
+  if (status.includes("removed") || status === "sold") return false;
+  return quantityAvailable > 0;
+}
+
+function normalizeInventoryItem(item) {
+  return {
+    image: item.image || FALLBACK_IMAGE,
+    name: item.name || item.item_name || "Vault item",
+    category: item.category || "Uncategorized",
+    price: item.price ?? item.listing_price ?? 0,
+    listDate: item.list_date || item.dateAdded || item.date_added || "",
+    status: item.status || "Available",
+    sku: item.sku || ""
+  };
+}
+
+async function loadInventoryItems() {
+  const response = await fetch(INVENTORY_URL);
+
+  if (!response.ok) {
+    throw new Error("Could not load data/inventory.json");
+  }
+
+  const exportedItems = await response.json();
+
+  inventoryItems = exportedItems
+    .filter(isAvailableForWebsite)
+    .sort((a, b) => {
+      const dateDifference = getSortTime(b) - getSortTime(a);
+      if (dateDifference !== 0) return dateDifference;
+      return getSkuNumber(b.sku) - getSkuNumber(a.sku);
+    })
+    .slice(0, MAX_NEW_THIS_WEEK_ITEMS)
+    .map(normalizeInventoryItem);
+}
+
 function getItemsPerView() {
-  if (window.innerWidth <= 820) {
-    return 1;
-  }
-
-  if (window.innerWidth <= 1050) {
-    return 2;
-  }
-
+  if (window.innerWidth <= 760) return 1;
+  if (window.innerWidth <= 1120) return 2;
   return 3;
 }
 
-
-/* =========================================================
-   5. CREATE PRODUCT CARDS
-========================================================= */
-
 function createProductCards() {
+  if (!carouselTrack) return;
+
+  if (!inventoryItems.length) {
+    carouselTrack.innerHTML = `
+      <article class="product-card empty-carousel-card">
+        <div class="product-info">
+          <p class="product-category">Inventory</p>
+          <h3>New finds will appear here soon.</h3>
+          <p class="product-date">Export website inventory from The Vault Inventory System to refresh this section.</p>
+        </div>
+      </article>
+    `;
+    return;
+  }
+
   carouselTrack.innerHTML = "";
 
   inventoryItems.forEach((item) => {
     const card = document.createElement("article");
     card.className = "product-card";
 
-    const statusClass = item.status.toLowerCase() === "sold" ? "sold" : "";
+    const formattedDate = formatDate(item.listDate);
+    const dateLine = formattedDate ? `Added ${formattedDate}` : item.sku ? `SKU ${item.sku}` : "Recently added";
+    const image = escapeHtml(item.image);
+    const name = escapeHtml(item.name);
+    const category = escapeHtml(item.category);
+    const status = escapeHtml(item.status);
 
     card.innerHTML = `
       <div class="product-image">
-        <img src="${item.image}" alt="${item.name}">
-        <span class="status-pill ${statusClass}">${item.status}</span>
+        <img src="${image}" alt="${name}" onerror="this.onerror=null; this.src='${FALLBACK_IMAGE}';">
+        <span class="status-pill">${status}</span>
       </div>
 
       <div class="product-info">
-        <p class="product-category">${item.category}</p>
-        <h3>${item.name}</h3>
-        <p class="product-date">Added ${formatDate(item.dateAdded)}</p>
+        <p class="product-category">${category}</p>
+        <h3>${name}</h3>
+        <p class="product-date">${escapeHtml(dateLine)}</p>
         <p class="product-price">${formatPrice(item.price)}</p>
       </div>
     `;
@@ -155,16 +150,13 @@ function createProductCards() {
   });
 }
 
-
-/* =========================================================
-   6. DOT NAVIGATION
-========================================================= */
-
 function getTotalSlides() {
   return Math.max(1, inventoryItems.length - itemsPerView + 1);
 }
 
 function createDots() {
+  if (!dotsContainer) return;
+
   dotsContainer.innerHTML = "";
 
   for (let i = 0; i < getTotalSlides(); i++) {
@@ -185,56 +177,42 @@ function createDots() {
 }
 
 function updateDots() {
-  const dots = document.querySelectorAll(".carousel-dot");
-
-  dots.forEach((dot, index) => {
+  document.querySelectorAll(".carousel-dot").forEach((dot, index) => {
     dot.classList.toggle("active", index === currentSlide);
   });
 }
 
-
-/* =========================================================
-   7. CAROUSEL MOVEMENT
-========================================================= */
-
 function updateCarousel() {
   const cards = document.querySelectorAll(".product-card");
 
-  if (!cards.length) {
-    return;
-  }
+  if (!carouselTrack || !cards.length) return;
+
+  const maxSlide = getTotalSlides() - 1;
+  currentSlide = Math.min(currentSlide, maxSlide);
 
   const cardWidth = cards[0].offsetWidth;
-  const gap = 24;
+  const gap = Number.parseFloat(getComputedStyle(carouselTrack).gap) || 24;
   const moveAmount = currentSlide * (cardWidth + gap);
 
   carouselTrack.style.transform = `translateX(-${moveAmount}px)`;
-
   updateDots();
 }
 
 function goToNextSlide() {
-  const totalSlides = getTotalSlides();
-
-  currentSlide = (currentSlide + 1) % totalSlides;
+  currentSlide = (currentSlide + 1) % getTotalSlides();
   updateCarousel();
   restartAutoRotate();
 }
 
 function goToPreviousSlide() {
-  const totalSlides = getTotalSlides();
-
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  currentSlide = (currentSlide - 1 + getTotalSlides()) % getTotalSlides();
   updateCarousel();
   restartAutoRotate();
 }
 
-
-/* =========================================================
-   8. AUTO ROTATE
-========================================================= */
-
 function startAutoRotate() {
+  if (inventoryItems.length <= itemsPerView) return;
+
   autoRotateTimer = setInterval(() => {
     goToNextSlide();
   }, 6000);
@@ -244,11 +222,6 @@ function restartAutoRotate() {
   clearInterval(autoRotateTimer);
   startAutoRotate();
 }
-
-
-/* =========================================================
-   9. RESIZE HANDLING
-========================================================= */
 
 function handleResize() {
   const newItemsPerView = getItemsPerView();
@@ -262,21 +235,24 @@ function handleResize() {
   updateCarousel();
 }
 
+async function initHomepageCarousel() {
+  if (!carouselTrack || !dotsContainer || !prevButton || !nextButton) return;
 
-/* =========================================================
-   10. EVENT LISTENERS
-========================================================= */
+  try {
+    await loadInventoryItems();
+  } catch (error) {
+    console.error("New This Week error:", error);
+    inventoryItems = [];
+  }
 
-prevButton.addEventListener("click", goToPreviousSlide);
-nextButton.addEventListener("click", goToNextSlide);
-window.addEventListener("resize", handleResize);
+  createProductCards();
+  createDots();
+  updateCarousel();
+  startAutoRotate();
 
+  prevButton.addEventListener("click", goToPreviousSlide);
+  nextButton.addEventListener("click", goToNextSlide);
+  window.addEventListener("resize", handleResize);
+}
 
-/* =========================================================
-   11. INITIALIZE CAROUSEL
-========================================================= */
-
-createProductCards();
-createDots();
-updateCarousel();
-startAutoRotate();
+initHomepageCarousel();

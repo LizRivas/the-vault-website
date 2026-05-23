@@ -142,7 +142,7 @@
   {
     "sku": "M-1030",
     "name": "test quantity sold 3",
-    "category": "Jewlery",
+    "category": "Jewelry",
     "price": 15,
     "condition": "Like New",
     "image": "",
@@ -312,7 +312,7 @@
   {
     "sku": "M-1006",
     "name": "Pearl Ring",
-    "category": "Jewlery",
+    "category": "Jewelry",
     "price": 19.99,
     "condition": "Good",
     "image": "",

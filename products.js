@@ -4,7 +4,7 @@
 
 let allProducts = [];
 
-const defaultImage = "images/products/placeholder.jpg";
+const defaultImage = "images/vault-logo.png";
 
 const defaultCategories = [
   "Furniture",
@@ -17,7 +17,6 @@ const defaultCategories = [
   "Sports Memorabilia",
   "Books",
   "Jewelry",
-  "Jewlery",
   "Clothing",
   "Handbags",
   "Accessories",
@@ -32,6 +31,15 @@ const defaultCategories = [
 
 function money(value) {
   return `$${Number(value || 0).toFixed(2)}`;
+}
+
+function escapeHtml(value) {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
 }
 
 function slugify(value) {
@@ -87,20 +95,20 @@ function renderProducts(products) {
   grid.innerHTML = products.map(product => `
     <div 
       class="catalog-card"
-      data-category="${product.category || ""}"
+      data-category="${escapeHtml(product.category || "")}"
       data-price="${Number(product.price || 0)}"
-      data-condition="${product.condition || ""}"
+      data-condition="${escapeHtml(product.condition || "")}"
     >
      <img 
-  src="${product.image || defaultImage}" 
-  alt="${product.name || "Vault item"}"
-  onerror="this.onerror=null; this.src='images/vault-logo.png';"
+  src="${escapeHtml(product.image || defaultImage)}" 
+  alt="${escapeHtml(product.name || "Vault item")}"
+  onerror="this.onerror=null; this.src='${defaultImage}';"
 />
 
       <div class="catalog-card-content">
-        <p class="catalog-category">${product.category || "Uncategorized"}</p>
-        <h3>${product.name || "Unnamed Item"}</h3>
-        <p class="catalog-condition">${product.condition || "Condition not listed"}</p>
+        <p class="catalog-category">${escapeHtml(product.category || "Uncategorized")}</p>
+        <h3>${escapeHtml(product.name || "Unnamed Item")}</h3>
+        <p class="catalog-condition">${escapeHtml(product.condition || "Condition not listed")}</p>
         <p class="catalog-price">${money(product.price)}</p>
       </div>
     </div>

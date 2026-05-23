@@ -50,7 +50,7 @@
     <section class="hero">
       <div class="hero-content">
 
-        <p class="eyebrow">Antiques • Decor • Curated Finds</p>
+        <p class="eyebrow">Antiques &bull; Decor &bull; Curated Finds</p>
 
         <!-- Kept to exactly two lines -->
       <h1 class="hero-title">
@@ -63,7 +63,7 @@
 
         <div class="gold-divider">
           <span></span>
-          <div class="diamond">◇</div>
+          <div class="diamond">&#9671;</div>
           <span></span>
         </div>
 
@@ -71,7 +71,7 @@
    target="_blank" 
    class="hero-location">
 
-  <span class="pin">📍</span>
+  <span class="pin" aria-hidden="true">&#128205;</span>
 
   <div>
     <p class="location-top">Downtown Lemont, IL</p>
@@ -114,7 +114,7 @@
 
     <!-- =====================================================
          NEW THIS WEEK / HORIZONTAL CAROUSEL
-         Later this can connect to The Vault inventory system.
+         Loads from data/inventory.json exported by The Vault inventory system.
     ====================================================== -->
     <section id="new-this-week" class="carousel-section">
 
@@ -125,10 +125,10 @@
           <span></span>
         </div>
 
-        <h2>Fresh Finds From The Vault</h2>
+        <h2>Find Your Next Treasure at The Vault</h2>
 
         <p>
-          A rotating preview of newly added inventory. Later, this section can connect directly to your Vault inventory system.
+          A rotating preview of newly added inventory from The Vault.
         </p>
       </div>
 
@@ -140,7 +140,7 @@
 
         <div class="carousel-window">
           <div class="carousel-track" id="carouselTrack">
-            <!-- Product cards are loaded from script.js -->
+            <!-- Product cards are loaded from data/inventory.json by script.js -->
           </div>
         </div>
 
@@ -161,7 +161,6 @@
   <div class="event-card">
     <p class="eyebrow">Upcoming Event</p>
 
-    <!-- ✅ FIXED TITLE -->
     <h2>Grand Opening Coming Soon</h2>
 
     <p>
