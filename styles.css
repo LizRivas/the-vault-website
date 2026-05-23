@@ -683,6 +683,38 @@ img {
   transform: translateY(-2px);
 }
 
+.form-coming-soon {
+  margin-top: 14px;
+  color: var(--muted-gold);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.contact-form-note {
+  color: var(--text-muted);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.signup-form input:disabled,
+.signup-form button:disabled,
+.contact-form input:disabled,
+.contact-form textarea:disabled,
+.contact-form button:disabled,
+.contact-subscribe-form input:disabled,
+.contact-subscribe-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.signup-form button:disabled:hover,
+.contact-form button:disabled:hover,
+.contact-subscribe-form button:disabled:hover {
+  transform: none;
+}
+
 /* =========================================================
    10. SOCIAL FOLLOW SECTION
 ========================================================= */
