@@ -51,7 +51,9 @@ function slugify(value) {
 }
 
 async function loadProductsFromJSON() {
-  const response = await fetch("data/inventory.json");
+  const response = await fetch(`data/inventory.json?v=${Date.now()}`, {
+    cache: "no-store"
+  });
 
   if (!response.ok) {
     throw new Error("Could not load data/inventory.json");

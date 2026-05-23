@@ -86,7 +86,9 @@ function normalizeInventoryItem(item) {
 }
 
 async function loadInventoryItems() {
-  const response = await fetch(INVENTORY_URL);
+  const response = await fetch(`${INVENTORY_URL}?v=${Date.now()}`, {
+    cache: "no-store"
+  });
 
   if (!response.ok) {
     throw new Error("Could not load data/inventory.json");
