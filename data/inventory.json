@@ -1,5 +1,25 @@
 [
   {
+    "sku": "M-1047",
+    "name": "Stained Glass Votive Bird House",
+    "category": "Home Decor",
+    "price": 24.99,
+    "condition": "Very Good",
+    "image": "images/products/M-1047.jpg",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1045",
+    "name": "Silver Bath & Body Candel",
+    "category": "Bath",
+    "price": 15,
+    "condition": "Like New",
+    "image": "images/products/M-1045.jpg",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
     "sku": "M-1044",
     "name": "Betty Boop 3",
     "category": "Clothing",
@@ -138,26 +158,6 @@
     "image": "",
     "status": "Available",
     "quantity_available": 10
-  },
-  {
-    "sku": "M-1030",
-    "name": "test quantity sold 3",
-    "category": "Jewelry",
-    "price": 15,
-    "condition": "Like New",
-    "image": "",
-    "status": "Available (Partial)",
-    "quantity_available": 9
-  },
-  {
-    "sku": "M-1029",
-    "name": "One Quantity Check",
-    "category": "Seasonal-Spring",
-    "price": 10,
-    "condition": "Poor",
-    "image": "",
-    "status": "Available",
-    "quantity_available": 1
   },
   {
     "sku": "M-1028",
