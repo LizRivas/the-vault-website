@@ -65,6 +65,14 @@ function isAvailableForWebsite(item) {
   return quantityAvailable > 0;
 }
 
+function hasProductPhoto(item) {
+  const image = String(item.image || "").trim().toLowerCase();
+  return image &&
+    !image.includes("vault-logo") &&
+    !image.includes("placeholder") &&
+    !image.includes("placholder");
+}
+
 function normalizeInventoryItem(item) {
   return {
     image: item.image || FALLBACK_IMAGE,
@@ -88,6 +96,7 @@ async function loadInventoryItems() {
 
   inventoryItems = exportedItems
     .filter(isAvailableForWebsite)
+    .filter(hasProductPhoto)
     .sort((a, b) => {
       const dateDifference = getSortTime(b) - getSortTime(a);
       if (dateDifference !== 0) return dateDifference;
@@ -111,8 +120,8 @@ function createProductCards() {
       <article class="product-card empty-carousel-card">
         <div class="product-info">
           <p class="product-category">Inventory</p>
-          <h3>New finds will appear here soon.</h3>
-          <p class="product-date">Export website inventory from The Vault Inventory System to refresh this section.</p>
+          <h3>Featured finds will appear here soon.</h3>
+          <p class="product-date">Photographed items selected for the website will appear in this section.</p>
         </div>
       </article>
     `;

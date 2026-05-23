@@ -57,7 +57,28 @@ async function loadProductsFromJSON() {
     throw new Error("Could not load data/inventory.json");
   }
 
-  allProducts = await response.json();
+  const exportedProducts = await response.json();
+  allProducts = exportedProducts.filter(isFeaturedFind);
+}
+
+function isAvailableForWebsite(product) {
+  const status = String(product.status || "").toLowerCase();
+  const quantityAvailable = Number(product.quantity_available ?? product.quantity ?? 0);
+
+  if (status.includes("removed") || status === "sold") return false;
+  return quantityAvailable > 0;
+}
+
+function hasProductPhoto(product) {
+  const image = String(product.image || "").trim().toLowerCase();
+  return image &&
+    !image.includes("vault-logo") &&
+    !image.includes("placeholder") &&
+    !image.includes("placholder");
+}
+
+function isFeaturedFind(product) {
+  return isAvailableForWebsite(product) && hasProductPhoto(product);
 }
 
 function loadCategoryCheckboxes() {
@@ -68,7 +89,9 @@ function loadCategoryCheckboxes() {
     allProducts.map(p => p.category).filter(Boolean)
   )];
 
-  const categories = [...new Set([...defaultCategories, ...categoriesFromProducts])];
+  const categories = categoriesFromProducts.length
+    ? categoriesFromProducts
+    : defaultCategories;
 
   categoryContainer.innerHTML = "";
 
@@ -87,7 +110,7 @@ function renderProducts(products) {
   if (!grid) return;
 
   if (products.length === 0) {
-    grid.innerHTML = `<p class="empty-products">No products match these filters.</p>`;
+    grid.innerHTML = `<p class="empty-products">No featured finds match these filters.</p>`;
     updateResultsCount(0, allProducts.length);
     return;
   }
@@ -166,7 +189,7 @@ function updateResultsCount(visibleCount, totalCount) {
   const resultsCount = document.getElementById("resultsCount");
   if (!resultsCount) return;
 
-  resultsCount.textContent = `Showing ${visibleCount} of ${totalCount} items`;
+  resultsCount.textContent = `Showing ${visibleCount} of ${totalCount} featured finds`;
 }
 
 async function initProductsPage() {
@@ -184,13 +207,13 @@ async function initProductsPage() {
     });
 
   } catch (error) {
-    console.error("Products page error:", error);
+    console.error("Featured finds page error:", error);
 
     const grid = document.querySelector(".products-grid");
     if (grid) {
       grid.innerHTML = `
         <p class="empty-products">
-          Products could not be loaded. Make sure data/inventory.json exists.
+          Featured finds could not be loaded. Make sure data/inventory.json exists.
         </p>
       `;
     }
