@@ -1,5 +1,15 @@
 [
   {
+    "sku": "M-1049",
+    "name": "Stained glass prism",
+    "category": "Furniture",
+    "price": 20,
+    "condition": "Good",
+    "image": "images/products/M-1049.jpg",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
     "sku": "M-1048",
     "name": "Charlie Brown Nutcracker",
     "category": "Holiday-Christmas",
