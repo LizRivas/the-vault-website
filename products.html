@@ -24,7 +24,12 @@
         </div>
       </a>
 
-      <ul class="nav-links">
+      <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
+        <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="menu-label">Menu</span>
+      </button>
+
+      <ul class="nav-links" id="primaryNav">
         <li><a href="index.html">Home</a></li>
         <li><a href="products.html" class="active-link">Featured Finds</a></li>
         <li><a href="what-we-carry.html">What We Carry</a></li>
@@ -41,6 +46,7 @@
     <section class="products-hero">
       <h1>Featured Finds</h1>
       <p>A curated preview of photographed pieces. Visit The Vault to explore the full in-store collection.</p>
+      <p class="preview-note">Soft opening preview: featured photos shown here are test examples while we prepare the store.</p>
     </section>
 
     <section class="products-shop-layout">
@@ -100,6 +106,7 @@
   </footer>
 
   <script src="products.js"></script>
+  <script src="nav.js"></script>
 
 </body>
 
