@@ -1,5 +1,15 @@
 [
   {
+    "sku": "M-1048",
+    "name": "Charlie Brown Nutcracker",
+    "category": "Holiday-Christmas",
+    "price": 45,
+    "condition": "Like New",
+    "image": "images/products/M-1048.jpg",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
     "sku": "M-1047",
     "name": "Stained Glass Votive Bird House",
     "category": "Home Decor",
@@ -30,46 +40,6 @@
     "quantity_available": 2
   },
   {
-    "sku": "M-1043",
-    "name": "name",
-    "category": "Furniture",
-    "price": 14,
-    "condition": "Good",
-    "image": "",
-    "status": "Available",
-    "quantity_available": 1
-  },
-  {
-    "sku": "M-1042",
-    "name": "name",
-    "category": "Furniture",
-    "price": 20,
-    "condition": "Good",
-    "image": "",
-    "status": "Available",
-    "quantity_available": 1
-  },
-  {
-    "sku": "M-1041",
-    "name": "Test Save",
-    "category": "Furniture",
-    "price": 0,
-    "condition": "",
-    "image": "",
-    "status": "Available",
-    "quantity_available": 1
-  },
-  {
-    "sku": "M-1040",
-    "name": "test validation",
-    "category": "Seasonal-Spring",
-    "price": 14.99,
-    "condition": "Fair",
-    "image": "",
-    "status": "Available (Partial)",
-    "quantity_available": 1
-  },
-  {
     "sku": "M-1039",
     "name": "test add new item",
     "category": "Holiday-Christmas",
@@ -78,86 +48,6 @@
     "image": "images/products/M-1039.jpg",
     "status": "Available (Partial)",
     "quantity_available": 2
-  },
-  {
-    "sku": "M-1038",
-    "name": "New product List",
-    "category": "Sports Memorabilia",
-    "price": 24,
-    "condition": "Fair",
-    "image": "",
-    "status": "Available (Partial)",
-    "quantity_available": 2
-  },
-  {
-    "sku": "M-1037",
-    "name": "test transaction table",
-    "category": "Holiday-4th of July",
-    "price": 10,
-    "condition": "Good",
-    "image": "",
-    "status": "Available (Partial)",
-    "quantity_available": 6
-  },
-  {
-    "sku": "M-1036",
-    "name": "test freeze on page",
-    "category": "Furniture",
-    "price": 60,
-    "condition": "Good",
-    "image": "",
-    "status": "Available (Partial)",
-    "quantity_available": 2
-  },
-  {
-    "sku": "M-1035",
-    "name": "Test Quantity V7",
-    "category": "Holiday-Halloween",
-    "price": 15,
-    "condition": "Good",
-    "image": "",
-    "status": "Available (Partial)",
-    "quantity_available": 5
-  },
-  {
-    "sku": "M-1034",
-    "name": "Test Quantity V6",
-    "category": "Holiday-Christmas",
-    "price": 10,
-    "condition": "Good",
-    "image": "",
-    "status": "Available (Partial)",
-    "quantity_available": 6
-  },
-  {
-    "sku": "M-1033",
-    "name": "test quantity sold - V5",
-    "category": "Books",
-    "price": 14,
-    "condition": "Like New",
-    "image": "",
-    "status": "Available (Partial)",
-    "quantity_available": 7
-  },
-  {
-    "sku": "M-1032",
-    "name": "test quantity 10",
-    "category": "Comics",
-    "price": 5,
-    "condition": "Like New",
-    "image": "",
-    "status": "Available (Partial)",
-    "quantity_available": 6
-  },
-  {
-    "sku": "M-1031",
-    "name": "test sell more quanity",
-    "category": "Comics",
-    "price": 8,
-    "condition": "Like New",
-    "image": "",
-    "status": "Available",
-    "quantity_available": 10
   },
   {
     "sku": "M-1028",
@@ -210,32 +100,12 @@
     "quantity_available": 1
   },
   {
-    "sku": "M-1020",
-    "name": "Test New Layout",
-    "category": "Toys",
-    "price": 16.2,
-    "condition": "New",
-    "image": "",
-    "status": "Available",
-    "quantity_available": 1
-  },
-  {
     "sku": "M-1018",
     "name": "The Bull Smoker",
     "category": "Other",
     "price": 1350,
     "condition": "Good",
     "image": "images/products/M-1018.jpg",
-    "status": "Available",
-    "quantity_available": 1
-  },
-  {
-    "sku": "M-1017",
-    "name": "New Item test",
-    "category": "Handbags",
-    "price": 15,
-    "condition": "New",
-    "image": "",
     "status": "Available",
     "quantity_available": 1
   },
@@ -260,36 +130,6 @@
     "quantity_available": 1
   },
   {
-    "sku": "M-1013",
-    "name": "Test Reprice and Save Item",
-    "category": "Books",
-    "price": 35,
-    "condition": "Good",
-    "image": "",
-    "status": "Available",
-    "quantity_available": 1
-  },
-  {
-    "sku": "M-1012",
-    "name": "test reprice",
-    "category": "Handbags",
-    "price": 22.5,
-    "condition": "",
-    "image": "",
-    "status": "Available",
-    "quantity_available": 1
-  },
-  {
-    "sku": "M-1011",
-    "name": "test repricing 1",
-    "category": "Clothing",
-    "price": 75,
-    "condition": "Fair",
-    "image": "",
-    "status": "Available",
-    "quantity_available": 1
-  },
-  {
     "sku": "M-1010",
     "name": "Funko Pop - Wolverine",
     "category": "Toys",
@@ -308,16 +148,6 @@
     "image": "images/products/M-1007.jpg",
     "status": "Available",
     "quantity_available": 5
-  },
-  {
-    "sku": "M-1006",
-    "name": "Pearl Ring",
-    "category": "Jewelry",
-    "price": 19.99,
-    "condition": "Good",
-    "image": "",
-    "status": "Available",
-    "quantity_available": 1
   },
   {
     "sku": "M-1005",
