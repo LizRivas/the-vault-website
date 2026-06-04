@@ -9,7 +9,7 @@ const vaultEvents = [
     active: true,
     tag: "Grand Opening",
     title: "The Vault Grand Opening",
-    date: "July / August 2026",
+    date: "Late Summer 2026",
     location: "408 Main St, Lemont, IL 60439",
     status: "Final date coming soon",
     description:
