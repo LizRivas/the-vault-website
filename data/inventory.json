@@ -160,26 +160,6 @@
     "quantity_available": 1
   },
   {
-    "sku": "M-1021",
-    "name": "Bull Smoker",
-    "category": "Outdoor",
-    "price": 3000,
-    "condition": "Very Good",
-    "image": "images/products/M-1021.jpg",
-    "status": "Available",
-    "quantity_available": 1
-  },
-  {
-    "sku": "M-1010",
-    "name": "Funko Pop - Wolverine",
-    "category": "Toys",
-    "price": 25,
-    "condition": "New",
-    "image": "images/products/M-1010.jpg",
-    "status": "Available",
-    "quantity_available": 1
-  },
-  {
     "sku": "M-1007",
     "name": "Ford Mustang Hot Wheels",
     "category": "Toys",
