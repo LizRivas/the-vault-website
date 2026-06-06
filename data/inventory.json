@@ -1,63 +1,133 @@
 [
   {
-    "sku": "M-1049",
-    "name": "Stained glass prism",
-    "category": "Furniture",
-    "price": 20,
+    "sku": "M-1057",
+    "name": "Harley-Davidson Lamp",
+    "category": "Lighting",
+    "price": 165,
+    "condition": "Very Good",
+    "image": "images/products/M-1057.png",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1056",
+    "name": "John Deere Small Wagon",
+    "category": "Collectibles",
+    "price": 45,
     "condition": "Good",
-    "image": "images/products/M-1049.jpg",
+    "image": "images/products/M-1056.png",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1055",
+    "name": "Elvis Blue Suede Shoes Lamp",
+    "category": "Pop Culture",
+    "price": 125,
+    "condition": "Good",
+    "image": "images/products/M-1055.png",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1054",
+    "name": "Betty Boop Lunch Box",
+    "category": "Pop Culture",
+    "price": 38,
+    "condition": "Good",
+    "image": "images/products/M-1054.png",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1053",
+    "name": "Vintage Pepsi Ice Bucket",
+    "category": "Vintage Advertising",
+    "price": 55,
+    "condition": "Good",
+    "image": "images/products/M-1053.png",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1052",
+    "name": "Chicago Bears Jersey",
+    "category": "Sports Memorabilia",
+    "price": 95,
+    "condition": "Good",
+    "image": "images/products/M-1052.png",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1051",
+    "name": "Vintage Record Collection",
+    "category": "Records",
+    "price": 28,
+    "condition": "Good",
+    "image": "images/products/M-1051.png",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1050",
+    "name": "Golf Table Lamp",
+    "category": "Lighting",
+    "price": 75,
+    "condition": "Good",
+    "image": "images/products/M-1050.png",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1049",
+    "name": "Brass Decor Collection",
+    "category": "Home Decor",
+    "price": 68,
+    "condition": "Good",
+    "image": "images/products/M-1049.png",
     "status": "Available",
     "quantity_available": 1
   },
   {
     "sku": "M-1048",
-    "name": "Charlie Brown Nutcracker",
-    "category": "Holiday-Christmas",
-    "price": 45,
-    "condition": "Like New",
-    "image": "images/products/M-1048.jpg",
+    "name": "Vintage Framed Landscape Art",
+    "category": "Wall Art",
+    "price": 85,
+    "condition": "Very Good",
+    "image": "images/products/M-1048.png",
     "status": "Available",
     "quantity_available": 1
   },
   {
     "sku": "M-1047",
-    "name": "Stained Glass Votive Bird House",
-    "category": "Home Decor",
-    "price": 24.99,
+    "name": "Christmas Nutcracker Collection",
+    "category": "Holiday-Christmas",
+    "price": 48,
+    "condition": "Good",
+    "image": "images/products/M-1047.png",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1046",
+    "name": "Mid-Century Side Table",
+    "category": "Furniture",
+    "price": 145,
     "condition": "Very Good",
-    "image": "images/products/M-1047.jpg",
+    "image": "images/products/M-1046.png",
     "status": "Available",
     "quantity_available": 1
-  },
-  {
-    "sku": "M-1045",
-    "name": "Silver Bath & Body Candel",
-    "category": "Bath",
-    "price": 15,
-    "condition": "Like New",
-    "image": "images/products/M-1045.jpg",
-    "status": "Available",
-    "quantity_available": 1
-  },
-  {
-    "sku": "M-1044",
-    "name": "Betty Boop 3",
-    "category": "Clothing",
-    "price": 37,
-    "condition": "Like New",
-    "image": "images/products/M-1044.jpg",
-    "status": "Available",
-    "quantity_available": 2
   },
   {
     "sku": "M-1039",
-    "name": "test add new item",
+    "name": "M&M Candy Display",
     "category": "Holiday-Christmas",
     "price": 100,
     "condition": "Like New",
     "image": "images/products/M-1039.jpg",
     "status": "Available (Partial)",
-    "quantity_available": 2
+    "quantity_available": 1
   },
   {
     "sku": "M-1028",
@@ -68,16 +138,6 @@
     "image": "images/products/M-1028.jpg",
     "status": "Available (Partial)",
     "quantity_available": 4
-  },
-  {
-    "sku": "M-1026",
-    "name": "Test Quantity Sold",
-    "category": "Home Decor",
-    "price": 85,
-    "condition": "New",
-    "image": "images/products/M-1026.jpg",
-    "status": "Available (Partial)",
-    "quantity_available": 1
   },
   {
     "sku": "M-1025",
@@ -91,7 +151,7 @@
   },
   {
     "sku": "M-1022",
-    "name": "Test Photo",
+    "name": "Betty Boop Model",
     "category": "Outdoor",
     "price": 800,
     "condition": "Very Good",
@@ -101,41 +161,11 @@
   },
   {
     "sku": "M-1021",
-    "name": "Bull Smoker 2",
+    "name": "Bull Smoker",
     "category": "Outdoor",
     "price": 3000,
     "condition": "Very Good",
     "image": "images/products/M-1021.jpg",
-    "status": "Available",
-    "quantity_available": 1
-  },
-  {
-    "sku": "M-1018",
-    "name": "The Bull Smoker",
-    "category": "Other",
-    "price": 1350,
-    "condition": "Good",
-    "image": "images/products/M-1018.jpg",
-    "status": "Available",
-    "quantity_available": 1
-  },
-  {
-    "sku": "M-1016",
-    "name": "Betty Boop",
-    "category": "Other",
-    "price": 1200,
-    "condition": "Good",
-    "image": "images/products/M-1016.jpg",
-    "status": "Available",
-    "quantity_available": 1
-  },
-  {
-    "sku": "M-1015",
-    "name": "save Item2",
-    "category": "Furniture",
-    "price": 90,
-    "condition": "Fair",
-    "image": "images/products/M-1015.jpg",
     "status": "Available",
     "quantity_available": 1
   },
@@ -170,20 +200,10 @@
     "quantity_available": 1
   },
   {
-    "sku": "M-1004",
-    "name": "Horn",
-    "category": "Home Decor",
-    "price": 0,
-    "condition": "Good",
-    "image": "images/products/M-1004.jpg",
-    "status": "Available",
-    "quantity_available": 3
-  },
-  {
     "sku": "M-1002",
     "name": "Tiffany Style Lamp",
     "category": "Other",
-    "price": 20,
+    "price": 35,
     "condition": "New",
     "image": "images/products/M-1002.jpg",
     "status": "Available",
