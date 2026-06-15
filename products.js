@@ -3,31 +3,9 @@
 ========================================================= */
 
 let allProducts = [];
+let activeMobileCategory = "";
 
 const defaultImage = "images/vault-logo.png";
-
-const defaultCategories = [
-  "Furniture",
-  "Home Decor",
-  "Lighting",
-  "Wall Art",
-  "Records",
-  "Comics",
-  "Toys",
-  "Sports Memorabilia",
-  "Books",
-  "Jewelry",
-  "Clothing",
-  "Handbags",
-  "Accessories",
-  "Holiday-Christmas",
-  "Holiday-Halloween",
-  "Holiday-4th of July",
-  "Seasonal-Spring",
-  "Seasonal-Fall",
-  "Other",
-  "Outdoor"
-];
 
 function money(value) {
   return `$${Number(value || 0).toFixed(2)}`;
@@ -87,23 +65,80 @@ function loadCategoryCheckboxes() {
   const categoryContainer = document.getElementById("categoryCheckboxes");
   if (!categoryContainer) return;
 
-  const categoriesFromProducts = [...new Set(
-    allProducts.map(p => p.category).filter(Boolean)
-  )];
-
-  const categories = categoriesFromProducts.length
-    ? categoriesFromProducts
-    : defaultCategories;
+  const categories = getCategorySummaries();
 
   categoryContainer.innerHTML = "";
 
-  categories.forEach(category => {
+  if (categories.length === 0) {
+    categoryContainer.innerHTML = `<p class="filter-empty-note">No categories yet.</p>`;
+    return;
+  }
+
+  categories.forEach(({ category, count }) => {
     const label = document.createElement("label");
     label.innerHTML = `
       <input type="checkbox" name="category" value="${category}">
-      ${category}
+      <span>${category}</span>
+      <small>${count}</small>
     `;
     categoryContainer.appendChild(label);
+  });
+}
+
+function getCategorySummaries() {
+  const counts = new Map();
+
+  allProducts.forEach(product => {
+    const category = String(product.category || "Uncategorized").trim() || "Uncategorized";
+    counts.set(category, (counts.get(category) || 0) + 1);
+  });
+
+  return Array.from(counts.entries())
+    .map(([category, count]) => ({ category, count }))
+    .sort((a, b) => a.category.localeCompare(b.category));
+}
+
+function loadMobileCategoryRail() {
+  const rail = document.getElementById("mobileCategoryRail");
+  if (!rail) return;
+
+  const categories = getCategorySummaries();
+  const chips = [
+    { category: "", label: "All", count: allProducts.length },
+    ...categories.map(item => ({
+      category: item.category,
+      label: item.category,
+      count: item.count
+    }))
+  ];
+
+  rail.innerHTML = chips.map(chip => `
+    <button
+      type="button"
+      class="mobile-category-chip${chip.category === activeMobileCategory ? " active" : ""}"
+      data-category="${escapeHtml(chip.category)}"
+    >
+      <span>${escapeHtml(chip.label)}</span>
+      <small>${chip.count}</small>
+    </button>
+  `).join("");
+
+  rail.querySelectorAll(".mobile-category-chip").forEach(button => {
+    button.addEventListener("click", () => {
+      activeMobileCategory = button.dataset.category || "";
+      document.querySelectorAll('input[name="category"]:checked').forEach(input => {
+        input.checked = false;
+      });
+      loadMobileCategoryRail();
+      filterProducts();
+
+      if (window.matchMedia("(max-width: 900px)").matches) {
+        document.querySelector(".products-results")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    });
   });
 }
 
@@ -159,6 +194,9 @@ function filterProducts() {
   const selectedCategories = Array.from(
     document.querySelectorAll('input[name="category"]:checked')
   ).map(input => input.value);
+  const categoryFilters = activeMobileCategory
+    ? [activeMobileCategory]
+    : selectedCategories;
 
   const selectedPrices = Array.from(
     document.querySelectorAll('input[name="price"]:checked')
@@ -174,7 +212,7 @@ function filterProducts() {
     const conditionSlug = slugify(product.condition);
 
     const categoryMatch =
-      selectedCategories.length === 0 || selectedCategories.includes(category);
+      categoryFilters.length === 0 || categoryFilters.includes(category);
 
     const priceMatch = matchesPriceRange(price, selectedPrices);
 
@@ -198,6 +236,7 @@ async function initProductsPage() {
   try {
     await loadProductsFromJSON();
     loadCategoryCheckboxes();
+    loadMobileCategoryRail();
     renderProducts(allProducts);
 
     const allCheckboxes = document.querySelectorAll(
@@ -205,7 +244,11 @@ async function initProductsPage() {
     );
 
     allCheckboxes.forEach(checkbox => {
-      checkbox.addEventListener("change", filterProducts);
+      checkbox.addEventListener("change", () => {
+        activeMobileCategory = "";
+        loadMobileCategoryRail();
+        filterProducts();
+      });
     });
 
   } catch (error) {
