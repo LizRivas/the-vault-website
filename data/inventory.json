@@ -1,15 +1,5 @@
 [
   {
-    "sku": "M-1061",
-    "name": "Vintage Pumpkin Candy Basket",
-    "category": "Holiday-Halloween",
-    "price": 10,
-    "condition": "Like New",
-    "image": "images/products/M-1061.jpg",
-    "status": "Available",
-    "quantity_available": 1
-  },
-  {
     "sku": "M-1057",
     "name": "Harley-Davidson Lamp",
     "category": "Lighting",
