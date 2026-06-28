@@ -1413,7 +1413,7 @@ img {
 .about-family-photo {
   width: 34%;
   max-width: 390px;
-  aspect-ratio: 3 / 4.75;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: center top;
   float: left;
@@ -1644,7 +1644,7 @@ img {
     float: none;
     width: 100%;
     max-width: none;
-    aspect-ratio: 3 / 4.75;
+    aspect-ratio: 3 / 4;
     margin: 0 0 28px;
   }
 
@@ -2466,3 +2466,4 @@ img {
     display: none;
   }
 }
+
