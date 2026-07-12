@@ -725,7 +725,8 @@ img {
   color: #cfc2ae;
 }
 
-.signup-form button {
+.signup-form button,
+.signup-link-button {
   border: 1px solid #fff;
   background: #fff;
   color: var(--dark);
@@ -735,9 +736,14 @@ img {
   font-weight: 700;
   cursor: pointer;
   transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.signup-form button:hover {
+.signup-form button:hover,
+.signup-link-button:hover {
   background: transparent;
   color: #fff;
   transform: translateY(-2px);
@@ -835,10 +841,10 @@ img {
 ========================================================= */
 
 .contact-section {
-  max-width: 800px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 100px 5%;
-  text-align: center;
+  padding: 58px 5% 46px;
+  text-align: left;
 }
 
 .contact-section h1 {
@@ -1344,51 +1350,105 @@ img {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  max-width: 1000px;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.88fr);
+  gap: 30px;
+  max-width: 1100px;
   margin: 0 auto;
+  align-items: stretch;
+}
+
+.visit-card,
+.contact-email-card {
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--gold);
+  background: #fffaf2;
+  box-shadow: var(--shadow-soft);
+  padding: 30px 34px;
 }
 
 .contact-info h2,
 .contact-form h2 {
-  margin-bottom: 20px;
+  margin: 6px 0 22px;
 }
 
-.contact-info p {
-  margin-bottom: 20px;
-  line-height: 1.5;
+.contact-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: 28px;
 }
 
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+.contact-detail,
+.contact-methods p {
+  min-width: 0;
 }
 
-.contact-form input,
-.contact-form textarea {
-  padding: 14px;
-  border: 1px solid var(--border);
-  font-family: inherit;
-}
-
-.contact-form button {
-  padding: 14px;
-  border: none;
-  background: var(--brown);
-  color: #fff;
-  cursor: pointer;
+.contact-detail strong,
+.contact-methods strong {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--brown);
+  font-size: 0.78rem;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
-.contact-form button:hover {
-  background: #000;
+.contact-detail a,
+.contact-detail span,
+.contact-methods a {
+  display: block;
+  color: var(--text);
+  line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
-@media (max-width: 800px) {
-  .contact-grid {
+.contact-detail small {
+  display: block;
+  margin-top: 8px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.contact-form-note {
+  max-width: 520px;
+  margin-bottom: 22px;
+  color: var(--text-muted);
+}
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.contact-methods p {
+  margin: 0;
+}
+
+.contact-email-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.contact-email-button:hover {
+  background: var(--gold);
+  color: #1d160f;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .contact-grid,
+  .contact-detail-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1884,7 +1944,7 @@ img {
 ========================================================= */
 
 .contact-subscribe {
-  padding: 80px 20px 90px;
+  padding: 34px 20px 66px;
   background-color: #f8f6f2;
   text-align: center;
 }
@@ -1918,16 +1978,22 @@ img {
   font-family: inherit;
 }
 
-.contact-subscribe-form button {
+.contact-subscribe-form button,
+.contact-subscribe-button {
   padding: 12px 20px;
   background: black;
   color: white;
   border: none;
   cursor: pointer;
   transition: 0.3s ease;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
 }
 
-.contact-subscribe-form button:hover {
+.contact-subscribe-form button:hover,
+.contact-subscribe-button:hover {
   background: var(--gold);
 }
 /* =========================================================
