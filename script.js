@@ -17,13 +17,6 @@ const dotsContainer = document.getElementById("carouselDots");
 const prevButton = document.getElementById("prevItem");
 const nextButton = document.getElementById("nextItem");
 
-function formatPrice(price) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD"
-  }).format(Number(price || 0));
-}
-
 function escapeHtml(value) {
   return String(value || "")
     .replaceAll("&", "&amp;")
@@ -78,7 +71,6 @@ function normalizeInventoryItem(item) {
     image: item.image || FALLBACK_IMAGE,
     name: item.name || item.item_name || "Vault item",
     category: item.category || "Uncategorized",
-    price: item.price ?? item.listing_price ?? 0,
     listDate: item.list_date || item.dateAdded || item.date_added || "",
     status: item.status || "Available",
     sku: item.sku || ""
@@ -153,7 +145,6 @@ function createProductCards() {
         <p class="product-category">${category}</p>
         <h3>${name}</h3>
         <p class="product-date">${escapeHtml(dateLine)}</p>
-        <p class="product-price">${formatPrice(item.price)}</p>
       </div>
     `;
 

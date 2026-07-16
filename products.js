@@ -7,10 +7,6 @@ let activeMobileCategory = "";
 
 const defaultImage = "images/vault-logo.png";
 
-function money(value) {
-  return `$${Number(value || 0).toFixed(2)}`;
-}
-
 function escapeHtml(value) {
   return String(value || "")
     .replaceAll("&", "&amp;")
@@ -18,14 +14,6 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
-}
-
-function slugify(value) {
-  return String(value || "")
-    .toLowerCase()
-    .replaceAll(" ", "-")
-    .replaceAll("/", "")
-    .trim();
 }
 
 async function loadProductsFromJSON() {
@@ -156,8 +144,6 @@ function renderProducts(products) {
     <div 
       class="catalog-card"
       data-category="${escapeHtml(product.category || "")}"
-      data-price="${Number(product.price || 0)}"
-      data-condition="${escapeHtml(product.condition || "")}"
     >
      <img 
   src="${escapeHtml(product.image || defaultImage)}" 
@@ -168,26 +154,11 @@ function renderProducts(products) {
       <div class="catalog-card-content">
         <p class="catalog-category">${escapeHtml(product.category || "Uncategorized")}</p>
         <h3>${escapeHtml(product.name || "Unnamed Item")}</h3>
-        <p class="catalog-condition">${escapeHtml(product.condition || "Condition not listed")}</p>
-        <p class="catalog-price">${money(product.price)}</p>
       </div>
     </div>
   `).join("");
 
   updateResultsCount(products.length, allProducts.length);
-}
-
-function matchesPriceRange(price, selectedRanges) {
-  if (selectedRanges.length === 0) return true;
-
-  return selectedRanges.some(range => {
-    if (range === "under-25") return price < 25;
-    if (range === "25-75") return price >= 25 && price <= 75;
-    if (range === "75-150") return price > 75 && price <= 150;
-    if (range === "150-300") return price > 150 && price <= 300;
-    if (range === "over-300") return price > 300;
-    return true;
-  });
 }
 
 function filterProducts() {
@@ -198,28 +169,13 @@ function filterProducts() {
     ? [activeMobileCategory]
     : selectedCategories;
 
-  const selectedPrices = Array.from(
-    document.querySelectorAll('input[name="price"]:checked')
-  ).map(input => input.value);
-
-  const selectedConditions = Array.from(
-    document.querySelectorAll('input[name="condition"]:checked')
-  ).map(input => input.value);
-
   const filtered = allProducts.filter(product => {
     const category = product.category || "";
-    const price = Number(product.price || 0);
-    const conditionSlug = slugify(product.condition);
 
     const categoryMatch =
       categoryFilters.length === 0 || categoryFilters.includes(category);
 
-    const priceMatch = matchesPriceRange(price, selectedPrices);
-
-    const conditionMatch =
-      selectedConditions.length === 0 || selectedConditions.includes(conditionSlug);
-
-    return categoryMatch && priceMatch && conditionMatch;
+    return categoryMatch;
   });
 
   renderProducts(filtered);
