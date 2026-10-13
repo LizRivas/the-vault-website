@@ -9,9 +9,9 @@ const vaultEvents = [
     active: true,
     tag: "Grand Opening",
     title: "The Vault Grand Opening",
-    date: "Late Summer 2026",
+    date: "Late October 2026",
     location: "408 Main St, Lemont, IL 60439",
-    status: "Final date coming soon",
+    status: "Opening late October",
     description:
       "Join us as we officially open The Vault Antiques & Decor in downtown Lemont. Our grand opening will introduce the store, our curated collection, and the shopping experience we are building for the community."
   },
