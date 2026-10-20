@@ -1873,7 +1873,8 @@ img {
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, calc((100% - 72px) / 4));
+  justify-content: center;
   gap: 24px;
 }
 

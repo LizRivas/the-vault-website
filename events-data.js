@@ -20,17 +20,8 @@ const vaultEvents = [
   {
     featured: false,
     active: true,
-    tag: "Coming Soon",
-    title: "Special Needs Shopping Event",
-    date: "Coming Soon",
-    description:
-      "A quieter, welcoming shopping experience designed with extra care, comfort, and space for guests and families."
-  },
-  {
-    featured: false,
-    active: true,
     tag: "Collector Event",
-    title: "Signing Barbie Event",
+    title: "Meet Barbie!",
     date: "Coming Soon",
     description:
       "A fun collector-focused event featuring Barbie-themed pieces, photos, and special finds."
