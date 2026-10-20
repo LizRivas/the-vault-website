@@ -32,9 +32,13 @@ function loadFeaturedEvent() {
   document.getElementById("featuredEventDescription").textContent = featured.description;
   document.getElementById("featuredEventDate").textContent = featured.date;
   document.getElementById("featuredEventLocation").textContent =
-    featured.location || "408 Main St, Lemont, IL 60439";
-  document.getElementById("featuredEventStatus").textContent =
-    featured.status || "Details coming soon";
+    featured.location || "408 Main St.\nLemont, IL 60439\nLocated in Historic Downtown Lemont";
+  document.getElementById("featuredEventDoorsOpen").textContent =
+    featured.doorsOpen || "Details coming soon";
+  document.getElementById("featuredEventCelebration").textContent =
+    featured.celebration || "Details coming soon";
+  document.getElementById("featuredEventParking").textContent =
+    featured.parking || "Parking details coming soon";
 }
 
 function loadUpcomingEvents() {

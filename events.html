@@ -17,6 +17,7 @@
   <title>Events | The Vault</title>
 
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -57,11 +58,11 @@
     <!-- EVENTS HERO -->
     <section class="events-page-hero">
       <div class="events-hero-content">
-        <p class="eyebrow">Opening Soon</p>
-        <h1>Grand Opening</h1>
-        <p class="events-hero-date">Late October 2026</p>
+        <p class="eyebrow">Saturday, October 31, 2026</p>
+        <h1><span class="events-title-line">Grand Opening</span><span class="events-title-line">Celebration</span></h1>
+        <p class="events-hero-date">Doors Open at 10:00 AM</p>
         <p>
-          We’re opening our doors soon, and you’re invited to experience The Vault from the very beginning.
+          Join us in Historic Downtown Lemont as we celebrate The Vault from 2:00 PM to 6:00 PM.
         </p>
       </div>
     </section>
@@ -73,14 +74,16 @@
 
     <div>
       <p class="eyebrow" id="featuredEventLabel">Featured Event</p>
-      <h2 id="featuredEventTitle">The Vault Grand Opening</h2>
+      <h2 id="featuredEventTitle">Grand Opening Celebration</h2>
       <p id="featuredEventDescription"></p>
     </div>
 
     <div class="event-details-box">
       <p><strong>Date</strong><br><span id="featuredEventDate"></span></p>
-      <p><strong>Location</strong><br><span id="featuredEventLocation"></span></p>
-      <p><strong>Status</strong><br><span id="featuredEventStatus"></span></p>
+      <p><strong>Doors Open</strong><br><span id="featuredEventDoorsOpen"></span></p>
+      <p><strong>Special Grand Opening Celebration</strong><br><span id="featuredEventCelebration"></span></p>
+      <p><strong>Location</strong><br><span id="featuredEventLocation" class="event-location"></span></p>
+      <p><strong>Parking</strong><br><span id="featuredEventParking"></span></p>
     </div>
 
   </div>
@@ -127,7 +130,14 @@
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <p>&copy; 2026 The Vault Antiques & Decor</p>
+    <p class="footer-social-invitation">Follow The Vault for new finds, store news, and upcoming events.</p>
+    <div class="social-links footer-social-links">
+      <a href="https://www.facebook.com/profile.php?id=61595099978414" target="_blank" rel="noopener noreferrer" aria-label="Follow The Vault Antiques & Decor on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+      <a href="https://www.instagram.com/thevaultantiquesanddecor/" target="_blank" rel="noopener noreferrer" aria-label="Follow The Vault Antiques & Decor on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      <a href="https://www.tiktok.com/@thevaultantiquesanddecor" target="_blank" rel="noopener noreferrer" aria-label="Follow The Vault Antiques & Decor on TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+      <a href="https://www.youtube.com/channel/UCxyMr5SCbkeIt9cslSGVCfg" target="_blank" rel="noopener noreferrer" aria-label="Follow The Vault Antiques & Decor on YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+    </div>
+    <p class="footer-copyright">&copy; 2026 The Vault Antiques & Decor. All rights reserved.</p>
   </footer>
 <script src="events-data.js"></script>
 <script src="events.js"></script>

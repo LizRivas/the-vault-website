@@ -673,6 +673,16 @@ img {
   white-space: nowrap;
 }
 
+.event-card .grand-opening-heading {
+  max-width: 1080px;
+  padding: 0 12px;
+  font-size: clamp(2rem, 3vw, 3.35rem);
+  line-height: 1.12;
+  white-space: normal;
+  text-wrap: balance;
+  overflow-wrap: normal;
+}
+
 .event-card p {
   max-width: 680px;
   margin: 0 auto;
@@ -829,11 +839,29 @@ img {
 ========================================================= */
 
 .site-footer {
-  padding: 14px 5%;
+  padding: 28px 5% 20px;
   background: #070707;
   color: #aaa;
   text-align: center;
   font-size: 0.9rem;
+}
+
+.footer-social-invitation {
+  color: #cfc2ae;
+  margin-bottom: 14px;
+}
+
+.site-footer .footer-social-links {
+  margin-bottom: 18px;
+}
+
+.site-footer .footer-social-links a {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-copyright {
+  color: #aaa;
 }
 
 /* =========================================================
@@ -1758,9 +1786,14 @@ img {
 }
 
 .events-hero-content h1 {
-  font-size: clamp(3.2rem, 7vw, 6.8rem);
+  font-size: clamp(2.25rem, 7vw, 6.8rem);
   line-height: 0.95;
   margin: 14px 0;
+}
+
+.events-title-line {
+  display: block;
+  white-space: nowrap;
 }
 
 .events-hero-date {
@@ -1822,6 +1855,10 @@ img {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 0.78rem;
+}
+
+.event-location {
+  white-space: pre-line;
 }
 
 

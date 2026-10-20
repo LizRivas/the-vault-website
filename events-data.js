@@ -8,12 +8,14 @@ const vaultEvents = [
     featured: true,
     active: true,
     tag: "Grand Opening",
-    title: "The Vault Grand Opening",
-    date: "Late October 2026",
-    location: "408 Main St, Lemont, IL 60439",
-    status: "Opening late October",
+    title: "Grand Opening Celebration",
+    date: "Saturday, October 31, 2026",
+    doorsOpen: "10:00 AM",
+    celebration: "2:00 PM – 6:00 PM",
+    location: "408 Main St.\nLemont, IL 60439\nLocated in Historic Downtown Lemont",
+    parking: "Free parking next door in the Village Hall parking lot.",
     description:
-      "Join us as we officially open The Vault Antiques & Decor in downtown Lemont. Our grand opening will introduce the store, our curated collection, and the shopping experience we are building for the community."
+      "Join us as we celebrate the grand opening of The Vault Antiques & Decor! Explore our curated collection of antiques, vintage treasures, timeless furniture, unique décor, and one-of-a-kind finds. Our doors open at 10:00 AM, and we'll have a special grand opening celebration from 2:00 PM to 6:00 PM. We look forward to welcoming you!"
   },
   {
     featured: false,
