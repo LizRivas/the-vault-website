@@ -17,6 +17,7 @@
 
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="holiday.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -99,6 +100,7 @@
           A refined collection of antique pieces, timeless decor, and one-of-a-kind finds selected with character and style.
         </p>
 
+
         <a href="#new-this-week" class="primary-btn">Explore New Arrivals</a>
 
       </div>
@@ -172,17 +174,26 @@
 <!-- =====================================================
      EVENTS SECTION
 ===================================================== -->
-<section id="events" class="events-section">
-  <div class="event-card">
-    <p class="eyebrow">Grand Opening</p>
-
-    <h2 class="grand-opening-heading">Grand Opening &mdash; Saturday, October 31, 2026 (Halloween)</h2>
-
-    <p><strong>Doors Open at 10:00 AM</strong></p>
-
-    <a href="events.html" class="secondary-btn">View Event Details</a>
+<!-- HOLIDAY 2026: seasonal feature (replaces October grand opening) -->
+<section id="events" class="hv-home-feature" aria-labelledby="hv-home-title">
+  <div class="hv-home-inner">
+    <div class="hv-home-copy">
+      <p class="hv-kicker">The holiday season at The Vault <span aria-hidden="true">✦</span></p>
+      <h2 id="hv-home-title">Timeless <em>Holiday</em> Finds</h2>
+      <div class="hv-rule" aria-hidden="true"></div>
+      <p>Find something with a story this season. Discover classic Christmas accents, vintage collectibles, and one-of-a-kind gifts at The Vault in historic Downtown Lemont.</p>
+      <div class="hv-actions">
+        <a href="products.html" class="hv-btn hv-btn-dark">Explore Featured Finds</a>
+        <a href="events.html" class="hv-btn hv-btn-outline">Holiday Happenings</a>
+      </div>
+    </div>
+    <div class="hv-home-art">
+      <img src="images/holiday/holiday-finds.png" loading="lazy" alt="Actual items at The Vault: brass stocking hangers and a black Christmas nutcracker" />
+      <p>Real finds from inside our store</p>
+    </div>
   </div>
 </section>
+
 
 
 <!-- =====================================================

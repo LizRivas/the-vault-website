@@ -1,0 +1,53 @@
+/* The Vault 2026 holiday DEV styling — layered over existing site styles. */
+.hv-home-feature,.hv-events-main{--hv-cream:#f7f1e6;--hv-green:#173e34;--hv-gold:#b18b50;--hv-text:#27241f;color:var(--hv-text)}
+.hv-home-feature *,.hv-events-main *{box-sizing:border-box}
+.hv-kicker{text-transform:uppercase;letter-spacing:.22em;font-family:Arial,sans-serif;font-size:.74rem;font-weight:700;color:#876939;margin:0 0 1.35rem}
+.hv-home-feature{background:radial-gradient(circle at 80% 38%,#f7f3e9 0,#eae2d4 67%,#e1d7c6 100%);padding:clamp(3rem,6vw,6rem) max(24px,calc((100vw - 1180px)/2))}
+.hv-home-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(2rem,4vw,5rem)}
+.hv-home-copy h2,.hv-events-copy h1,.hv-center-intro h2,.hv-visit h2,.hv-newsletter h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;line-height:1.12;letter-spacing:-.035em;color:#22221d}
+.hv-home-copy h2{font-size:clamp(3rem,5vw,5rem);margin:0 0 1.3rem}
+.hv-home-copy h2 em,.hv-events-copy h1 em{font-weight:400;color:var(--hv-green)}
+.hv-home-copy>p:not(.hv-kicker),.hv-events-copy>p:not(.hv-kicker){font-family:Georgia,serif;font-size:clamp(1.04rem,1.45vw,1.23rem);line-height:1.8;max-width:560px;color:#585047}
+.hv-rule{width:84px;height:2px;background:var(--hv-gold);margin:1.35rem 0 1.4rem}
+.hv-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.9rem}
+.hv-btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 22px;text-decoration:none!important;min-height:48px;font-family:Arial,sans-serif;font-size:.78rem;text-transform:uppercase;font-weight:700;letter-spacing:.1em;transition:transform .2s,background .2s}
+.hv-btn:hover{transform:translateY(-2px)}
+.hv-btn-dark{background:var(--hv-green);color:white!important;border:1px solid var(--hv-green)}
+.hv-btn-outline{color:var(--hv-green)!important;border:1px solid var(--hv-green);background:transparent}
+.hv-home-art{background:radial-gradient(circle at center,#f9f5ea 0%,#e8dfcc 70%);border:1px solid #d3c4a6;position:relative;min-height:380px;padding:28px 20px 13px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.hv-home-art:before,.hv-events-art:before{content:'';position:absolute;inset:12px;border:1px solid rgba(159,126,75,.3);pointer-events:none}
+.hv-home-art img{display:block;max-width:100%;width:100%;max-height:460px;object-fit:contain;filter:drop-shadow(0 18px 18px rgba(0,0,0,.1))}
+.hv-home-art p,.hv-events-art span{font-family:Georgia,serif;font-style:italic;font-size:.86rem;color:#716558;text-align:center;margin:6px 0 4px}
+.hv-events-main{background:#f6f1e8}
+.hv-events-hero{background:radial-gradient(circle at 70% 40%,#f7f2e5,#e5ddcc 78%);padding:clamp(3rem,5vw,5.5rem) max(24px,calc((100vw - 1200px)/2));display:grid;grid-template-columns:.94fr 1.06fr;align-items:center;gap:clamp(1.5rem,4vw,5rem);min-height:580px}
+.hv-events-copy h1{font-size:clamp(3.1rem,5.4vw,5.7rem);margin:0}
+.hv-events-copy h1 em{display:block}
+.hv-events-art{position:relative;border:1px solid #ccb992;background:radial-gradient(circle at center,#fbf7ee,#eee5d3);min-height:445px;padding:24px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.hv-events-art img{width:100%;max-height:470px;object-fit:contain;filter:drop-shadow(0 20px 20px rgba(0,0,0,.12))}
+.hv-happenings{padding:clamp(3.5rem,6vw,6rem) 24px;max-width:1220px;margin:auto}
+.hv-center-intro{text-align:center;max-width:700px;margin:0 auto 2.6rem}
+.hv-center-intro h2{font-size:clamp(2.5rem,4vw,4.2rem);margin:.5rem 0}
+.hv-center-intro>p:last-child{font-family:Georgia,serif;color:#625a50;font-size:1.1rem}
+.hv-event-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.hv-season-card{display:flex;gap:20px;align-items:flex-start;background:#fffdf8;border:1px solid #e1d5c2;padding:clamp(20px,3vw,34px);box-shadow:0 8px 26px rgba(53,41,25,.04)}
+.hv-season-card .hv-date{min-width:76px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid #ad9a73;padding:10px 8px;color:var(--hv-green);font-family:Georgia,serif}
+.hv-date span{font-family:Arial,sans-serif;letter-spacing:.2em;font-weight:bold;font-size:.72rem}
+.hv-date strong{font-size:2rem;font-weight:400;line-height:1.3}
+.hv-card-label{font-family:Arial,sans-serif!important;text-transform:uppercase;letter-spacing:.15em;font-size:.7rem!important;font-weight:700;color:#927441!important;margin:2px 0 9px}
+.hv-season-card h3{font-family:Georgia,serif;font-size:clamp(1.35rem,2vw,1.7rem);font-weight:400;color:#203a31;margin:0 0 10px}
+.hv-season-card p:not(.hv-card-label){font-size:.96rem;line-height:1.75;color:#5b5449;margin:0}
+.hv-season-card a,.hv-visit-info a{color:#1b5440;font-weight:bold;text-underline-offset:3px;display:inline-block;margin-top:15px}
+.hv-feature-card{border-color:#bca478;background:#faf5e8}
+.hv-visit{background:#e8dfcd;padding:clamp(3rem,5vw,5rem) max(24px,calc((100vw - 1160px)/2));display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.hv-visit h2{font-size:clamp(2.5rem,4vw,4rem);margin:0 0 18px}
+.hv-visit>div>p:not(.hv-kicker){font-family:Georgia,serif;line-height:1.8;color:#544b3d;max-width:500px}
+.hv-visit-info{background:#fffdf7;border:1px solid #c9b68e;padding:clamp(25px,4vw,44px)}
+.hv-visit-info h3{font-family:Georgia,serif;font-size:1.75rem;font-weight:400;color:#203a31;margin:0 0 20px}
+.hv-visit-info p{font-size:.95rem;line-height:1.75;margin:0 0 13px}
+.hv-visit-info p strong,.hv-visit-info p span{display:block}
+.hv-small-note{font-style:italic;color:#776b5e;font-size:.83rem!important}
+.hv-newsletter{text-align:center;padding:4.5rem 24px 5rem;background:#f9f5ed}
+.hv-newsletter h2{font-size:clamp(2.4rem,4vw,3.7rem);margin:0 0 12px}
+.hv-newsletter>p:not(.hv-kicker){font-family:Georgia,serif;color:#625a50;margin:0 auto 20px}
+@media(max-width:850px){.hv-home-inner,.hv-events-hero,.hv-visit{grid-template-columns:1fr}.hv-events-hero{min-height:0}.hv-events-art{min-height:340px}.hv-home-art{min-height:300px}.hv-event-grid{grid-template-columns:1fr}}
+@media(max-width:500px){.hv-home-feature,.hv-events-hero{padding:45px 20px}.hv-home-copy h2,.hv-events-copy h1{font-size:2.75rem}.hv-season-card{gap:14px;padding:18px 14px}.hv-season-card .hv-date{min-width:60px}.hv-date strong{font-size:1.5rem}.hv-actions{flex-direction:column}.hv-btn{width:100%}.hv-visit{padding:45px 20px}}

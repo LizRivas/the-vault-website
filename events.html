@@ -17,6 +17,7 @@
   <title>Events | The Vault</title>
 
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="holiday.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -53,76 +54,56 @@
   </header>
 
 
-  <main>
-
-    <!-- EVENTS HERO -->
-    <section class="events-page-hero">
-      <div class="events-hero-content">
-        <p class="eyebrow">Saturday, October 31, 2026</p>
-        <h1><span class="events-title-line">Grand Opening</span><span class="events-title-line">Celebration</span></h1>
-        <p class="events-hero-date">Doors Open at 10:00 AM</p>
+  <main class="hv-events-main">
+  <section class="hv-events-hero" aria-labelledby="hv-events-title">
+    <div class="hv-events-copy">
+      <p class="hv-kicker">The Vault Antiques &amp; Decor · Holiday 2026</p>
+      <h1 id="hv-events-title">A Holiday Season <em>at The Vault</em></h1>
+      <div class="hv-rule" aria-hidden="true"></div>
+      <p>Traditional charm. Treasured finds. A little holiday magic. Join us in historic Downtown Lemont for a season filled with vintage décor and gifts worth remembering.</p>
+      <div class="hv-actions">
+        <a class="hv-btn hv-btn-dark" href="#holiday-happenings">See Holiday Happenings</a>
+        <a class="hv-btn hv-btn-outline" href="contact.html">Plan Your Visit</a>
       </div>
-    </section>
+    </div>
+    <div class="hv-events-art">
+      <img src="images/holiday/holiday-village.png" alt="Actual store holiday display featuring The Vault's flocked Christmas tree, collectible village houses and nutcracker" fetchpriority="high" />
+      <span>Holiday treasures photographed at The Vault</span>
+    </div>
+  </section>
 
+  <section class="hv-happenings" id="holiday-happenings" aria-labelledby="hv-happenings-title">
+    <div class="hv-center-intro">
+      <p class="hv-kicker">Save the dates</p>
+      <h2 id="hv-happenings-title">Holiday Happenings</h2>
+      <p>Make Downtown Lemont part of your holiday traditions.</p>
+    </div>
+    <div class="hv-event-grid">
+      <article class="hv-season-card"><div class="hv-date"><span>NOV</span><strong>26</strong></div><div><p class="hv-card-label">Seasonal greeting</p><h3>Closed for Thanksgiving</h3><p>The Vault will be closed on Thanksgiving Day as we celebrate with family and friends. From all of us at The Vault, we wish you and your family a very Happy Thanksgiving!</p></div></article>
+      <article class="hv-season-card"><div class="hv-date"><span>NOV</span><strong>27</strong></div><div><p class="hv-card-label">Gift-shopping inspiration</p><h3>Black Friday</h3><p>Come shop The Vault for unique finds, one-of-a-kind gifts, vintage treasures, and special Black Friday deals! Stop in and discover something extraordinary this holiday season.</p></div></article>
+      <article class="hv-season-card"><div class="hv-date"><span>NOV</span><strong>28</strong></div><div><p class="hv-card-label">Shop small, shop local</p><h3>Small Business Saturday</h3><p>Celebrate independent shops and find distinctive treasures at The Vault in the heart of historic Downtown Lemont.</p></div></article>
+      <article class="hv-season-card hv-feature-card"><div class="hv-date"><span>DEC</span><strong>05</strong></div><div><p class="hv-card-label">Downtown Lemont · 2–5 PM</p><h3>Hometown Holiday</h3><p>Celebrate the holiday season in historic Downtown Lemont! Festivities begin at 2:00 PM, followed by the Christmas tree lighting at 5:00 PM. Stop by The Vault anytime during our regular Saturday hours, 10:00 AM–6:00 PM.</p><a href="https://www.lemontdowntown.com/hometown-holiday" target="_blank" rel="noopener noreferrer">Official event details <span aria-hidden="true">↗</span></a></div></article>
+    </div>
+  </section>
 
-    <!-- FEATURED EVENT -->
-<section class="featured-event-section">
-  <div class="featured-event-card">
-
+  <section class="hv-visit" aria-labelledby="hv-visit-title">
     <div>
-      <p class="eyebrow" id="featuredEventLabel">Featured Event</p>
-      <h2 id="featuredEventTitle">Grand Opening Celebration</h2>
-      <p id="featuredEventDescription"></p>
+      <p class="hv-kicker">Step inside</p>
+      <h2 id="hv-visit-title">A Little Holiday Magic</h2>
+      <p>Discover vintage Christmas décor, timeless holiday treasures, and one-of-a-kind gifts for friends and family. Whether you're decorating your home or searching for something special, The Vault has unique finds to make the season memorable.</p>
+      <a class="hv-btn hv-btn-outline" href="products.html">Browse Featured Finds</a>
     </div>
-
-    <div class="event-details-box">
-      <p><strong>Date</strong><br><span id="featuredEventDate"></span></p>
-      <p><strong>Doors Open</strong><br><span id="featuredEventDoorsOpen"></span></p>
-      <p><strong>Special Grand Opening Celebration</strong><br><span id="featuredEventCelebration"></span></p>
-      <p><strong>Location</strong><br><span id="featuredEventLocation" class="event-location"></span></p>
-      <p><strong>Parking</strong><br><span id="featuredEventParking"></span></p>
+    <div class="hv-visit-info">
+      <h3>Visit The Vault</h3>
+      <p>408 Main St · Lemont, IL 60439</p>
+      <p><strong>Wednesday, Thursday &amp; Sunday</strong><span>10:00 AM – 4:30 PM</span></p>
+      <p><strong>Friday &amp; Saturday</strong><span>10:00 AM – 6:00 PM</span></p>
+      <p class="hv-small-note">Monday &amp; Tuesday closed. Holiday hours may vary; check before visiting.</p>
+      <a href="https://maps.google.com/?q=408+Main+St,+Lemont,+IL+60439" target="_blank" rel="noopener noreferrer">Get directions <span aria-hidden="true">↗</span></a>
     </div>
-
-  </div>
-</section>
-
-<!-- =====================================================
-     UPCOMING EVENTS
-     Event cards load from events-data.js
-===================================================== -->
-<section class="upcoming-events-section">
-
-  <div class="section-heading">
-    <p class="eyebrow">What’s Ahead</p>
-    <h2>Upcoming Events</h2>
-    <p>
-      We plan to host and participate in special events throughout the year.
-      Check back often as dates and details are added.
-    </p>
-  </div>
-
-  <div class="events-grid" id="eventsGrid">
-    <!-- Events load here automatically from events-data.js -->
-  </div>
-
-</section>
-   
-
-
-    <!-- EVENT CTA -->
-    <section class="events-cta-section">
-      <div class="events-cta-box">
-        <p class="eyebrow">Stay Updated</p>
-        <h2>Be the First to Know</h2>
-        <p>
-          Follow along for grand opening updates, upcoming event details, new arrivals,
-          and special in-store announcements.
-        </p>
-        <a href="contact.html" class="secondary-btn">Contact Us</a>
-      </div>
-    </section>
-
-  </main>
+  </section>
+  <section class="hv-newsletter"><p class="hv-kicker">Keep in touch</p><h2>Be the First to Know</h2><p>New finds, store news and holiday updates — delivered straight from The Vault.</p><a class="hv-btn hv-btn-dark" href="https://docs.google.com/forms/d/e/1FAIpQLSe67ofDoHHeJ994dmFxpGGtEN6l8y-qGls4PM31Glu7OnllKg/viewform?usp=sharing" target="_blank" rel="noopener noreferrer">Join the Email List</a></section>
+</main>
 
 
   <!-- FOOTER -->
@@ -136,8 +117,8 @@
     </div>
     <p class="footer-copyright">&copy; 2026 The Vault Antiques & Decor. All rights reserved.</p>
   </footer>
-<script src="events-data.js"></script>
-<script src="events.js"></script>
+
+
 <script src="nav.js"></script>
 </body>
 

@@ -70,6 +70,37 @@
     "image": "images/products/M-1551.jpg",
     "status": "Available",
     "quantity_available": 1
+  },
+  {
+    "sku": "M-2138",
+    "name": "Vintage Old Style Wall Light",
+    "category": "Antiques - Barware",
+    "image": "images/products/M-2138.png",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-1083",
+    "name": "Patrick Stewart Autographed B&W Photo \"Capt. Jean Luc Picard\" Star Trek",
+    "category": "Autograph Memorabilia",
+    "image": "images/products/M-1083.png",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-2608",
+    "name": "Merry Christmas Santa Claus Ceramic Accent Lamp",
+    "category": "Holiday-Christmas",
+    "image": "images/products/M-2608.png",
+    "status": "Available",
+    "quantity_available": 1
+  },
+  {
+    "sku": "M-2427",
+    "name": "Pair of Skier Nutcrackers",
+    "category": "Holiday-Christmas",
+    "image": "images/products/M-2427.png",
+    "status": "Available",
+    "quantity_available": 1
   }
 ]
-
