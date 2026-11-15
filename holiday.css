@@ -37,6 +37,7 @@
 .hv-season-card h3{font-family:Georgia,serif;font-size:clamp(1.35rem,2vw,1.7rem);font-weight:400;color:#203a31;margin:0 0 10px}
 .hv-season-card p:not(.hv-card-label){font-size:.96rem;line-height:1.75;color:#5b5449;margin:0}
 .hv-season-card a,.hv-visit-info a{color:#1b5440;font-weight:bold;text-underline-offset:3px;display:inline-block;margin-top:15px}
+.hv-card-links{display:flex;flex-wrap:wrap;gap:4px 20px}
 .hv-feature-card{border-color:#bca478;background:#faf5e8}
 .hv-visit{background:#e8dfcd;padding:clamp(3rem,5vw,5rem) max(24px,calc((100vw - 1160px)/2));display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
 .hv-visit h2{font-size:clamp(2.5rem,4vw,4rem);margin:0 0 18px}
@@ -51,3 +52,73 @@
 .hv-newsletter>p:not(.hv-kicker){font-family:Georgia,serif;color:#625a50;margin:0 auto 20px}
 @media(max-width:850px){.hv-home-inner,.hv-events-hero,.hv-visit{grid-template-columns:1fr}.hv-events-hero{min-height:0}.hv-events-art{min-height:340px}.hv-home-art{min-height:300px}.hv-event-grid{grid-template-columns:1fr}}
 @media(max-width:500px){.hv-home-feature,.hv-events-hero{padding:45px 20px}.hv-home-copy h2,.hv-events-copy h1{font-size:2.75rem}.hv-season-card{gap:14px;padding:18px 14px}.hv-season-card .hv-date{min-width:60px}.hv-date strong{font-size:1.5rem}.hv-actions{flex-direction:column}.hv-btn{width:100%}.hv-visit{padding:45px 20px}}
+
+/* Approved 2026 holiday events composition */
+.hv-events-main{--hv-ink:#24342d;--hv-forest:#173d32;--hv-forest-deep:#102e27;--hv-pine:#285847;--hv-wine:#74352f;--hv-gold:#b89558;--hv-cream:#f6f0e4;--hv-paper:#fffdf8;--hv-muted:#625d54;background:var(--hv-cream);overflow:hidden}
+.hv-events-main .hv-kicker{color:#8d6f3e;margin-bottom:1.2rem}
+.hv-events-hero{min-height:640px;padding:clamp(4rem,7vw,7rem) max(24px,calc((100vw - 1180px)/2));grid-template-columns:.92fr 1.08fr;background:linear-gradient(115deg,#f7f1e6 0%,#ede3d2 48%,#d9e2d9 100%);position:relative;isolation:isolate}
+.hv-events-hero:before{content:"";position:absolute;right:-10%;top:-35%;width:52vw;height:52vw;max-width:760px;max-height:760px;border-radius:50%;border:1px solid rgba(38,83,66,.12);box-shadow:0 0 0 42px rgba(38,83,66,.035),0 0 0 84px rgba(38,83,66,.025);z-index:-1}
+.hv-events-copy h1{max-width:650px;color:var(--hv-ink);font-size:clamp(3.4rem,6vw,6.25rem);line-height:.98;letter-spacing:-.055em}
+.hv-events-copy h1 em{display:inline;color:var(--hv-forest);font-style:italic}
+.hv-events-copy>p:not(.hv-kicker){max-width:530px;color:#514c43}
+.hv-text-link{display:inline-block;margin-top:1.2rem;color:var(--hv-forest);font:700 .78rem Arial,sans-serif;text-transform:uppercase;letter-spacing:.13em;text-decoration:none;border-bottom:1px solid rgba(23,61,50,.4);padding-bottom:6px}
+.hv-events-art{margin:0;min-height:480px;background:linear-gradient(145deg,#fbf7ee,#e6dcc7);box-shadow:0 30px 70px rgba(43,49,39,.13);transform:rotate(1.25deg)}
+.hv-events-art:after{content:"";position:absolute;inset:24px;border:1px solid rgba(255,255,255,.8);pointer-events:none}
+.hv-events-art img{position:relative;z-index:1;max-height:500px}
+.hv-events-art figcaption{position:relative;z-index:2;font-family:Georgia,serif;font-style:italic;font-size:.88rem;color:#706659;text-align:center;margin-top:4px}
+
+.hv-pin-feature{max-width:1260px;margin:0 auto;padding:clamp(4.5rem,8vw,8rem) 24px;display:grid;grid-template-columns:minmax(360px,.92fr) minmax(400px,1.08fr);gap:clamp(3rem,7vw,7rem);align-items:center}
+.hv-pin-visuals{position:relative}
+.hv-pin-art{margin:0;background:var(--hv-forest-deep);padding:clamp(14px,2vw,24px);box-shadow:18px 20px 0 #d8c7a8;position:relative;transform:rotate(-1.4deg)}
+.hv-pin-art:before,.hv-pin-art:after{content:"";position:absolute;width:34px;height:54px;background:#8b342e;top:-12px;clip-path:polygon(0 0,100% 0,100% 72%,50% 100%,0 72%)}
+.hv-pin-art:before{left:9%}.hv-pin-art:after{right:9%}
+.hv-pin-art img{display:block;width:100%;height:auto;border:1px solid rgba(255,255,255,.35)}
+.hv-pin-art figcaption{color:#ecdfc8;font:italic .78rem Georgia,serif;text-align:center;padding:13px 8px 0}
+.hv-clock-pin{position:relative;z-index:3;width:clamp(240px,24vw,340px);margin:-22px auto 0;transform:rotate(1deg)}
+.hv-clock-pin img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;filter:drop-shadow(0 14px 12px rgba(24,45,36,.18))}
+.hv-clock-pin figcaption{position:relative;z-index:3;text-align:center;color:var(--hv-forest);font:italic 700 .82rem Georgia,serif;padding-top:7px}
+.hv-pin-copy h2,.hv-center-intro h2,.hv-visit h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;color:var(--hv-ink)}
+.hv-pin-copy h2{font-size:clamp(3rem,5.3vw,5.4rem);line-height:1;letter-spacing:-.045em;margin:.8rem 0 1.4rem}
+.hv-weekend{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin:0;text-transform:uppercase;letter-spacing:.15em;font:700 .76rem Arial,sans-serif;color:var(--hv-wine)}
+.hv-weekend span{display:inline-flex;background:var(--hv-wine);color:#fff8eb;padding:9px 13px;letter-spacing:.11em}
+.hv-pin-lede{font:400 clamp(1.08rem,1.6vw,1.3rem)/1.7 Georgia,serif;color:#4f4a42;max-width:620px}
+.hv-pin-lede strong{color:var(--hv-forest);font-weight:700}
+.hv-stockists{border-top:1px solid #c9b999;border-bottom:1px solid #c9b999;margin:1.7rem 0;padding:1.2rem 0;display:grid;grid-template-columns:110px 1fr;gap:20px}
+.hv-stockists>p{text-transform:uppercase;letter-spacing:.16em;font:700 .7rem Arial,sans-serif;color:#927345;margin:4px 0}
+.hv-stockists ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;font:400 1.02rem/1.45 Georgia,serif;color:#35463e}
+.hv-stockists li:before{content:"—";color:var(--hv-gold);margin-right:9px}
+.hv-limited{color:var(--hv-wine);font:italic 400 1rem Georgia,serif;margin:0}.hv-limited span{color:var(--hv-gold);margin-right:6px}
+
+.hv-happenings{max-width:none;background:var(--hv-forest-deep);padding:clamp(4.5rem,7vw,7rem) max(24px,calc((100vw - 1180px)/2))}
+.hv-happenings .hv-kicker{color:#d1b478}.hv-center-intro{max-width:760px;margin-bottom:3.4rem}.hv-center-intro h2{color:#fff9ed}.hv-center-intro>p:last-child{color:#d8d8ce}
+.hv-event-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.hv-season-card{background:#f8f2e7;border-color:rgba(255,255,255,.12);box-shadow:none;min-height:230px;transition:transform .25s ease,box-shadow .25s ease}
+.hv-season-card:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(0,0,0,.16)}
+.hv-season-card .hv-date{border-color:#b09a70;color:var(--hv-forest);background:rgba(255,255,255,.42)}
+.hv-season-card .hv-date span{letter-spacing:.15em}.hv-season-card .hv-date strong{white-space:nowrap;font-size:1.8rem}
+.hv-card-wide .hv-date strong,.hv-giveaway-card .hv-date strong{font-size:1.35rem}.hv-giveaway-card .hv-date span{font-size:.58rem;letter-spacing:.08em}
+.hv-card-wide{grid-column:1/-1;min-height:0;background:#e8ddc9;padding-right:clamp(30px,8vw,110px)}
+.hv-feature-card{background:#e5d7bc;border-color:#c7a96d}.hv-giveaway-card{background:#f5eee0}.hv-card-closed{background:#f2eadc}
+.hv-season-card h3{color:var(--hv-forest-deep)}.hv-season-card p:not(.hv-card-label){color:#575149}.hv-season-card a{color:var(--hv-wine)}
+
+.hv-visit{background:linear-gradient(135deg,#e9dfcd,#d7e0d6);grid-template-columns:1.08fr .92fr;padding:clamp(4.5rem,7vw,7rem) max(24px,calc((100vw - 1140px)/2))}
+.hv-visit h2{line-height:1.05;letter-spacing:-.04em}.hv-visit-copy>p:not(.hv-kicker){font:400 1.1rem/1.8 Georgia,serif;color:#514b42;max-width:540px}.hv-visit-info{box-shadow:0 20px 50px rgba(43,49,39,.1)}
+
+@media(max-width:900px){
+  .hv-events-hero,.hv-pin-feature,.hv-visit{grid-template-columns:1fr}
+  .hv-events-hero{min-height:0;padding-top:4rem}.hv-events-art{min-height:400px;transform:none}
+  .hv-pin-feature{max-width:760px}.hv-pin-visuals{max-width:620px;width:100%;margin:0 auto}.hv-pin-art{width:100%;margin:0;transform:none}.hv-clock-pin{width:270px}.hv-pin-copy{text-align:center}.hv-pin-lede{margin-left:auto;margin-right:auto}.hv-stockists{text-align:left}
+  .hv-visit-copy{text-align:center}.hv-visit-copy>p:not(.hv-kicker){margin-left:auto;margin-right:auto}
+}
+@media(max-width:680px){
+  .hv-events-hero{padding:3.6rem 20px}.hv-events-copy h1{font-size:clamp(3rem,14vw,4.7rem)}.hv-events-art{min-height:300px;padding:18px}.hv-events-art:after{inset:16px}
+  .hv-pin-feature{padding:4rem 20px;display:block}.hv-pin-visuals{margin-bottom:2.5rem}.hv-pin-art{box-shadow:10px 12px 0 #d8c7a8}.hv-clock-pin{width:230px;margin-top:-16px}.hv-pin-copy h2{font-size:clamp(2.8rem,13vw,4.2rem)}.hv-weekend{justify-content:center}.hv-stockists{grid-template-columns:1fr;gap:8px}
+  .hv-event-grid{grid-template-columns:1fr}.hv-card-wide{grid-column:auto;padding-right:18px}.hv-season-card{min-height:0}.hv-happenings{padding-left:18px;padding-right:18px}
+}
+@media(max-width:430px){
+  .hv-events-hero{padding-left:16px;padding-right:16px}.hv-events-copy h1{font-size:2.9rem}.hv-events-art{min-height:250px}
+  .hv-pin-feature{padding-left:16px;padding-right:16px}.hv-pin-visuals{margin-bottom:2rem}.hv-pin-art{padding:10px}.hv-pin-art figcaption{font-size:.7rem}.hv-clock-pin{width:200px;margin-top:-12px}.hv-clock-pin figcaption{font-size:.72rem}
+  .hv-season-card{display:block;padding:20px}.hv-season-card .hv-date{width:68px;min-width:0;margin-bottom:18px}.hv-card-wide{padding-right:20px}
+  .hv-visit{padding-left:18px;padding-right:18px}.hv-btn{width:100%}
+}
+@media(prefers-reduced-motion:reduce){.hv-season-card,.hv-btn{transition:none}}
